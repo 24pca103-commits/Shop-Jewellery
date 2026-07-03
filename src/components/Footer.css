@@ -29,7 +29,6 @@
 }
 
 /* Brand */
-.footer-brand {}
 .footer-logo {
   display: flex;
   align-items: center;
@@ -91,7 +90,6 @@
 .social-btn:hover { background: var(--gold); border-color: var(--gold); color: white; transform: translateY(-2px); }
 
 /* Cols */
-.footer-col {}
 .footer-col-title {
   font-family: var(--font-serif);
   font-size: 0.95rem;
