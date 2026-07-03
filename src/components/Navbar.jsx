@@ -6,6 +6,7 @@ import { useWishlist } from '../context/WishlistContext';
 import { useApp } from '../context/AppContext';
 import { GOLD_RATE } from '../data/products';
 import { CATEGORIES } from '../data/categories';
+import logoImg from '../assets/image.png';
 import './Navbar.css';
 
 export default function Navbar() {
@@ -57,7 +58,7 @@ export default function Navbar() {
             <span>1800-102-9898</span>
             <span className="topbar-sep">|</span>
             <MapPin size={12} />
-            <span className="topbar-link" style={{cursor: 'default'}}>Coimbatore, TN</span>
+            <span className="topbar-link" style={{ cursor: 'default' }}>Coimbatore, TN</span>
           </div>
           <div className="gold-ticker">
             <span className="ticker-label">Live Gold Rate:</span>
@@ -78,14 +79,8 @@ export default function Navbar() {
       {/* Main Nav */}
       <nav className={`navbar ${scrolled ? 'navbar-scrolled' : ''}`}>
         <div className="navbar-inner">
-          {/* Logo */}
-          <Link to="/" className="navbar-logo">
-            <div className="logo-emblem">
-              <img src="/logo.png" alt="Kriyaalaya Jewellery" style={{height: '36px', objectFit: 'contain'}} />
-            </div>
-            <div className="logo-text">
-              <span className="logo-brand" style={{textTransform: 'uppercase', fontSize: '1.2rem', letterSpacing: '0.05em'}}>Kriyaalaya Jewellery</span>
-            </div>
+          <Link to="/" className="navbar-logo" style={{ padding: '4px 0' }}>
+            <img src="/logo.png" alt="Kriyaalaya Jewellery" style={{ height: '70px', objectFit: 'contain', mixBlendMode: 'multiply' }} />
           </Link>
 
           {/* Desktop Nav Links */}

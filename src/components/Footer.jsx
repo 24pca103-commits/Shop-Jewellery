@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, ArrowRight, ShieldCheck, Award, RefreshCcw, Truck, Lock, HeadphonesIcon } from 'lucide-react';
 import './Footer.css';
+import logoImg from '../assets/image.png';
 
 const footerLinks = {
   'Shop': [
@@ -58,13 +59,9 @@ export default function Footer() {
       <div className="footer-main">
         <div className="container">
           <div className="footer-grid">
-            {/* Brand */}
             <div className="footer-brand">
-              <div className="footer-logo">
-                <img src="/logo.png" alt="Kriyaalaya Jewellery" style={{height: '42px', objectFit: 'contain'}} />
-                <div>
-                  <span className="footer-brand-name" style={{textTransform: 'uppercase', fontSize: '1.2rem', letterSpacing: '0.05em'}}>Kriyaalaya Jewellery</span>
-                </div>
+              <div className="footer-logo" style={{ display: 'block' }}>
+                <img src="/logo.png" alt="Kriyaalaya Jewellery" style={{height: '90px', objectFit: 'contain', mixBlendMode: 'multiply'}} />
               </div>
               <p className="footer-about">
                 India's most trusted premium jewellery brand, crafting exquisite gold, diamond, 

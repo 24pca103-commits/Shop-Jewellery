@@ -53,7 +53,7 @@ export default function ProductCard({ product, onQuickView }) {
             </span>
           )}
         </div>
-        
+
         {/* Side Actions (Wishlist & View) */}
         <div className="product-actions-side">
           <button className="card-btn-icon" onClick={handleWish} aria-label="Wishlist" title="Add to Wishlist">
@@ -81,18 +81,18 @@ export default function ProductCard({ product, onQuickView }) {
             <span>{product.rating}</span>
           </div>
         </div>
-        
+
         <h3 className="product-name">{product.name}</h3>
 
         <div className="product-price-row">
           <span className="product-price">₹{product.price.toLocaleString('en-IN')}</span>
           {product.emi && <span className="product-emi-badge">EMI</span>}
         </div>
-        
+
         <div className="product-details-sub">
-           <span>{product.purity} {product.metal}</span>
-           <span>•</span>
-           <span>{product.weight}g</span>
+          <span>{product.purity} {product.metal}</span>
+          <span>•</span>
+          <span>{product.weight}g</span>
         </div>
       </div>
     </Link>
