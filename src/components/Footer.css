@@ -206,7 +206,9 @@
   .footer-main { padding: var(--space-2xl) 0 var(--space-xl); }
 }
 @media (max-width: 480px) {
-  .footer-grid { grid-template-columns: 1fr; gap: var(--space-lg); }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: var(--space-lg) var(--space-md); }
+  .footer-brand { grid-column: 1 / -1; }
+  .footer-col:last-child { grid-column: 1 / -1; }
   .trust-grid { grid-template-columns: 1fr 1fr; gap: var(--space-sm); }
   .trust-item { flex-direction: column; text-align: center; gap: 6px; }
   .footer-trust { padding: var(--space-lg) 0; }
