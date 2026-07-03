@@ -1,0 +1,26 @@
+.cart-page { padding: var(--space-3xl) 0; min-height: 80vh; background: var(--cream); }
+.cart-layout { display: grid; grid-template-columns: 1fr 380px; gap: var(--space-2xl); align-items: start; }
+
+.cart-items-full { display: flex; flex-direction: column; gap: var(--space-md); }
+.cart-item-full { background: white; border-radius: var(--radius-lg); padding: var(--space-md); display: flex; gap: var(--space-lg); border: 1px solid rgba(0,0,0,0.05); }
+.cart-img-full { width: 120px; height: 120px; object-fit: cover; border-radius: var(--radius-sm); }
+.cart-info-full { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+.cart-name-full { font-family: var(--font-serif); font-size: 1.2rem; margin-bottom: 4px; color: var(--charcoal); }
+.cart-meta-full { font-size: 0.85rem; color: var(--charcoal-ghost); margin-bottom: 8px; }
+.cart-price-full { font-weight: 600; color: var(--charcoal); margin-bottom: 12px; }
+.cart-actions-full { display: flex; align-items: center; gap: var(--space-xl); }
+.remove-btn { display: flex; align-items: center; gap: 6px; background: none; border: none; color: var(--charcoal-ghost); font-size: 0.85rem; cursor: pointer; transition: var(--transition-fast); }
+.remove-btn:hover { color: var(--error); }
+.cart-item-total { font-family: var(--font-serif); font-size: 1.3rem; font-weight: 600; display: flex; align-items: center; }
+
+.order-summary { background: white; padding: var(--space-xl); border-radius: var(--radius-lg); border: 1px solid rgba(0,0,0,0.05); position: sticky; top: 100px; }
+.order-summary h3 { font-family: var(--font-serif); font-size: 1.4rem; margin-bottom: var(--space-lg); border-bottom: 1px solid rgba(0,0,0,0.05); padding-bottom: var(--space-sm); }
+.summary-row { display: flex; justify-content: space-between; margin-bottom: 12px; font-size: 0.95rem; color: var(--charcoal-mid); }
+.summary-row.total { border-top: 1px solid rgba(0,0,0,0.05); padding-top: 16px; margin-top: 4px; font-family: var(--font-serif); font-size: 1.5rem; font-weight: 700; color: var(--charcoal); }
+
+@media (max-width: 900px) {
+  .cart-layout { grid-template-columns: 1fr; }
+  .order-summary { position: relative; top: 0; }
+  .cart-item-full { flex-direction: column; position: relative; }
+  .cart-item-total { position: absolute; top: var(--space-md); right: var(--space-md); }
+}

@@ -1,0 +1,43 @@
+.scheme-page { padding-bottom: var(--space-3xl); background: var(--cream); }
+.scheme-hero { background: var(--charcoal); color: white; padding: var(--space-3xl) 0; text-align: center; margin-bottom: var(--space-2xl); }
+.scheme-title { font-family: var(--font-serif); font-size: 3rem; margin: 8px 0; }
+.scheme-subtitle { color: rgba(255,255,255,0.7); max-width: 600px; margin: 0 auto; }
+
+.scheme-content { display: grid; grid-template-columns: 1fr 400px; gap: var(--space-2xl); }
+.scheme-info h2 { font-family: var(--font-serif); font-size: 1.8rem; margin-bottom: var(--space-lg); color: var(--charcoal); }
+
+.steps { display: flex; flex-direction: column; gap: var(--space-md); }
+.step { display: flex; gap: 16px; align-items: flex-start; }
+.step-num { width: 32px; height: 32px; border-radius: 50%; background: var(--gold); color: white; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0; }
+.step h4 { font-size: 1.05rem; margin-bottom: 4px; color: var(--charcoal); }
+.step p { color: var(--charcoal-mid); font-size: 0.9rem; }
+
+.benefits-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md); }
+.benefit-card { background: white; padding: var(--space-md); border-radius: var(--radius-sm); border: 1px solid rgba(139, 90, 43,0.1); }
+.benefit-card h4 { margin: 12px 0 4px; font-size: 0.95rem; }
+.benefit-card p { font-size: 0.8rem; color: var(--charcoal-ghost); }
+
+.scheme-calculator { background: white; border-radius: var(--radius-lg); box-shadow: var(--shadow-soft); overflow: hidden; position: sticky; top: 100px; }
+.calc-header { background: var(--cream-dark); padding: var(--space-md) var(--space-lg); display: flex; align-items: center; gap: 10px; border-bottom: 1px solid rgba(0,0,0,0.05); }
+.calc-header h3 { font-family: var(--font-serif); font-size: 1.2rem; }
+.calc-body { padding: var(--space-lg); }
+
+.form-group label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 12px; color: var(--charcoal); }
+.slider { width: 100%; accent-color: var(--gold); margin-bottom: 8px; }
+.slider-val { font-family: var(--font-serif); font-size: 1.5rem; font-weight: 700; color: var(--gold-dark); text-align: center; margin-bottom: var(--space-lg); }
+
+.calc-results { background: var(--cream); border-radius: var(--radius-sm); padding: var(--space-md); display: flex; flex-direction: column; gap: 12px; }
+.result-row { display: flex; justify-content: space-between; font-size: 0.9rem; color: var(--charcoal-mid); }
+.bonus-row { color: #4CAF80; font-weight: 600; }
+.total-row { border-top: 1px dashed rgba(0,0,0,0.1); padding-top: 12px; font-family: var(--font-serif); font-size: 1.2rem; font-weight: 700; color: var(--charcoal); }
+
+.mt-lg { margin-top: var(--space-lg); }
+.terms-note { font-size: 0.7rem; color: var(--charcoal-ghost); text-align: center; margin-top: 12px; }
+
+@media (max-width: 900px) {
+  .scheme-content { grid-template-columns: 1fr; }
+  .scheme-calculator { position: relative; top: 0; }
+}
+@media (max-width: 600px) {
+  .benefits-grid { grid-template-columns: 1fr; }
+}

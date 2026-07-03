@@ -1,0 +1,65 @@
+// Product Data
+export const PRODUCTS = [
+  // Rings
+  { id: 1, name: 'Royal Kundan Solitaire Ring', category: 'rings', price: 45000, weight: 4.2, purity: '22K', metal: 'gold', stone: 'kundan', occasion: 'wedding', gender: 'women', rating: 4.9, reviews: 218, image: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&q=80', badge: 'Best Seller', makingCharges: 3200, diamondWeight: null, emi: true, inStock: true, collection: 'bridal', images: ['https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=800&q=80', 'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=800&q=80'] },
+  { id: 2, name: 'Eternity Diamond Band', category: 'rings', price: 128000, weight: 3.1, purity: '18K', metal: 'gold', stone: 'diamond', occasion: 'engagement', gender: 'women', rating: 4.8, reviews: 154, image: 'https://images.unsplash.com/photo-1543294001-f7cd5d7fb516?w=600&q=80', badge: 'New', makingCharges: 5400, diamondWeight: 0.85, emi: true, inStock: true, collection: 'diamond', images: ['https://images.unsplash.com/photo-1543294001-f7cd5d7fb516?w=800&q=80'] },
+  { id: 3, name: 'Classic Gold Band for Men', category: 'rings', price: 22000, weight: 6.8, purity: '22K', metal: 'gold', stone: null, occasion: 'daily', gender: 'men', rating: 4.7, reviews: 89, image: 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=600&q=80', badge: null, makingCharges: 1800, diamondWeight: null, emi: true, inStock: true, collection: 'mens', images: ['https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=800&q=80'] },
+  { id: 4, name: 'Floral Diamond Cocktail Ring', category: 'rings', price: 95000, weight: 4.5, purity: '18K', metal: 'gold', stone: 'diamond', occasion: 'party', gender: 'women', rating: 4.9, reviews: 76, image: 'https://images.unsplash.com/photo-1589128777073-263566ae5e4d?w=600&q=80', badge: 'Limited', makingCharges: 4200, diamondWeight: 1.2, emi: true, inStock: true, collection: 'diamond', images: ['https://images.unsplash.com/photo-1589128777073-263566ae5e4d?w=800&q=80'] },
+  { id: 5, name: 'Antique Temple Ring', category: 'rings', price: 38000, weight: 5.0, purity: '22K', metal: 'gold', stone: 'ruby', occasion: 'festival', gender: 'women', rating: 4.6, reviews: 112, image: 'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80', badge: null, makingCharges: 2800, diamondWeight: null, emi: true, inStock: true, collection: 'temple', images: ['https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=800&q=80'] },
+
+  // Earrings
+  { id: 6, name: 'Peacock Jhumka Earrings', category: 'earrings', price: 52000, weight: 8.4, purity: '22K', metal: 'gold', stone: 'emerald', occasion: 'wedding', gender: 'women', rating: 4.9, reviews: 341, image: 'https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600&q=80', badge: 'Best Seller', makingCharges: 4100, diamondWeight: null, emi: true, inStock: true, collection: 'bridal', images: ['https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=800&q=80'] },
+  { id: 7, name: 'Diamond Solitaire Studs', category: 'earrings', price: 76000, weight: 2.2, purity: '18K', metal: 'gold', stone: 'diamond', occasion: 'office', gender: 'women', rating: 4.8, reviews: 198, image: 'https://images.unsplash.com/photo-1630019852942-f89202989a59?w=600&q=80', badge: 'New', makingCharges: 3800, diamondWeight: 0.60, emi: true, inStock: true, collection: 'diamond', images: ['https://images.unsplash.com/photo-1630019852942-f89202989a59?w=800&q=80'] },
+  { id: 8, name: 'Chandelier Polki Earrings', category: 'earrings', price: 89000, weight: 12.5, purity: '22K', metal: 'gold', stone: 'polki', occasion: 'wedding', gender: 'women', rating: 4.9, reviews: 167, image: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&q=80', badge: 'Limited', makingCharges: 6200, diamondWeight: null, emi: true, inStock: true, collection: 'bridal', images: ['https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=800&q=80'] },
+
+  // Necklace
+  { id: 9, name: 'Layered Gold Choker Necklace', category: 'necklace', price: 185000, weight: 28.6, purity: '22K', metal: 'gold', stone: 'ruby', occasion: 'wedding', gender: 'women', rating: 4.9, reviews: 289, image: 'https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=600&q=80', badge: 'Best Seller', makingCharges: 14800, diamondWeight: null, emi: true, inStock: true, collection: 'bridal', images: ['https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=800&q=80'] },
+  { id: 10, name: 'Diamond Tennis Necklace', category: 'necklace', price: 320000, weight: 18.2, purity: '18K', metal: 'gold', stone: 'diamond', occasion: 'party', gender: 'women', rating: 5.0, reviews: 94, image: 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=600&q=80', badge: 'Premium', makingCharges: 18000, diamondWeight: 5.2, emi: true, inStock: true, collection: 'diamond', images: ['https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=800&q=80'] },
+  { id: 11, name: 'Temple Lakshmi Necklace', category: 'necklace', price: 142000, weight: 24.0, purity: '22K', metal: 'gold', stone: 'ruby', occasion: 'religious', gender: 'women', rating: 4.8, reviews: 156, image: 'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80', badge: null, makingCharges: 11000, diamondWeight: null, emi: true, inStock: true, collection: 'temple', images: ['https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=800&q=80'] },
+
+  // Bangles
+  { id: 12, name: 'Broad Polished Gold Bangle', category: 'bangles', price: 64000, weight: 12.0, purity: '22K', metal: 'gold', stone: null, occasion: 'daily', gender: 'women', rating: 4.7, reviews: 203, image: 'https://images.unsplash.com/photo-1573408301185-9519f94816b5?w=600&q=80', badge: null, makingCharges: 4800, diamondWeight: null, emi: true, inStock: true, collection: 'daily', images: ['https://images.unsplash.com/photo-1573408301185-9519f94816b5?w=800&q=80'] },
+  { id: 13, name: 'Antique Filigree Bangle Set', category: 'bangles', price: 98000, weight: 18.5, purity: '22K', metal: 'gold', stone: 'meenakari', occasion: 'wedding', gender: 'women', rating: 4.9, reviews: 127, image: 'https://images.unsplash.com/photo-1535632787350-4e68ef0ac584?w=600&q=80', badge: 'New', makingCharges: 7200, diamondWeight: null, emi: true, inStock: true, collection: 'antique', images: ['https://images.unsplash.com/photo-1535632787350-4e68ef0ac584?w=800&q=80'] },
+
+  // Mangalsutra
+  { id: 14, name: 'Diamond Mangalsutra', category: 'mangalsutra', price: 88000, weight: 8.5, purity: '18K', metal: 'gold', stone: 'diamond', occasion: 'wedding', gender: 'women', rating: 4.9, reviews: 412, image: 'https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=600&q=80', badge: 'Best Seller', makingCharges: 5200, diamondWeight: 0.95, emi: true, inStock: true, collection: 'bridal', images: ['https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=800&q=80'] },
+  { id: 15, name: 'Traditional Gold Mangalsutra', category: 'mangalsutra', price: 55000, weight: 10.2, purity: '22K', metal: 'gold', stone: null, occasion: 'wedding', gender: 'women', rating: 4.8, reviews: 287, image: 'https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600&q=80', badge: null, makingCharges: 3800, diamondWeight: null, emi: true, inStock: true, collection: 'bridal', images: ['https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=800&q=80'] },
+
+  // Pendant
+  { id: 16, name: 'Solitaire Diamond Pendant', category: 'pendant', price: 42000, weight: 2.1, purity: '18K', metal: 'gold', stone: 'diamond', occasion: 'daily', gender: 'women', rating: 4.8, reviews: 178, image: 'https://images.unsplash.com/photo-1589128777073-263566ae5e4d?w=600&q=80', badge: 'New', makingCharges: 2400, diamondWeight: 0.30, emi: true, inStock: true, collection: 'diamond', images: ['https://images.unsplash.com/photo-1589128777073-263566ae5e4d?w=800&q=80'] },
+  { id: 17, name: 'Om Gold Pendant for Men', category: 'pendant', price: 18000, weight: 3.8, purity: '22K', metal: 'gold', stone: null, occasion: 'daily', gender: 'men', rating: 4.7, reviews: 94, image: 'https://images.unsplash.com/photo-1543294001-f7cd5d7fb516?w=600&q=80', badge: null, makingCharges: 1400, diamondWeight: null, emi: false, inStock: true, collection: 'mens', images: ['https://images.unsplash.com/photo-1543294001-f7cd5d7fb516?w=800&q=80'] },
+
+  // Bracelets
+  { id: 18, name: 'Diamond Tennis Bracelet', category: 'bracelets', price: 165000, weight: 9.4, purity: '18K', metal: 'gold', stone: 'diamond', occasion: 'party', gender: 'women', rating: 5.0, reviews: 87, image: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&q=80', badge: 'Premium', makingCharges: 9800, diamondWeight: 3.5, emi: true, inStock: true, collection: 'diamond', images: ['https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=800&q=80'] },
+  { id: 19, name: 'Gold Chain Bracelet', category: 'bracelets', price: 28000, weight: 5.2, purity: '22K', metal: 'gold', stone: null, occasion: 'daily', gender: 'men', rating: 4.6, reviews: 134, image: 'https://images.unsplash.com/photo-1573408301185-9519f94816b5?w=600&q=80', badge: null, makingCharges: 2000, diamondWeight: null, emi: false, inStock: true, collection: 'daily', images: ['https://images.unsplash.com/photo-1573408301185-9519f94816b5?w=800&q=80'] },
+
+  // Chains
+  { id: 20, name: 'Singapore Gold Chain', category: 'chains', price: 32000, weight: 6.0, purity: '22K', metal: 'gold', stone: null, occasion: 'daily', gender: 'unisex', rating: 4.7, reviews: 256, image: 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=600&q=80', badge: 'Best Seller', makingCharges: 2400, diamondWeight: null, emi: false, inStock: true, collection: 'daily', images: ['https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=800&q=80'] },
+
+  // Coins
+  { id: 21, name: 'Lakshmi Gold Coin 8g', category: 'coins', price: 48000, weight: 8.0, purity: '24K', metal: 'gold', stone: null, occasion: 'gifting', gender: 'unisex', rating: 4.9, reviews: 502, image: 'https://images.unsplash.com/photo-1535632787350-4e68ef0ac584?w=600&q=80', badge: 'Gift', makingCharges: 800, diamondWeight: null, emi: false, inStock: true, collection: 'gifts', images: ['https://images.unsplash.com/photo-1535632787350-4e68ef0ac584?w=800&q=80'] },
+
+  // Nose Pin
+  { id: 22, name: 'Diamond Nose Pin', category: 'nosepins', price: 12000, weight: 0.5, purity: '18K', metal: 'gold', stone: 'diamond', occasion: 'daily', gender: 'women', rating: 4.8, reviews: 321, image: 'https://images.unsplash.com/photo-1630019852942-f89202989a59?w=600&q=80', badge: null, makingCharges: 600, diamondWeight: 0.05, emi: false, inStock: true, collection: 'daily', images: ['https://images.unsplash.com/photo-1630019852942-f89202989a59?w=800&q=80'] },
+
+  // Silver
+  { id: 23, name: 'Sterling Silver Kada', category: 'silver', price: 4500, weight: 45.0, purity: '925', metal: 'silver', stone: null, occasion: 'daily', gender: 'men', rating: 4.6, reviews: 198, image: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&q=80', badge: null, makingCharges: 400, diamondWeight: null, emi: false, inStock: true, collection: 'silver', images: ['https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=800&q=80'] },
+
+  // Platinum
+  { id: 24, name: 'Platinum Wedding Band', category: 'platinum', price: 72000, weight: 5.8, purity: '950', metal: 'platinum', stone: null, occasion: 'wedding', gender: 'unisex', rating: 4.9, reviews: 143, image: 'https://images.unsplash.com/photo-1543294001-f7cd5d7fb516?w=600&q=80', badge: 'Premium', makingCharges: 4200, diamondWeight: null, emi: true, inStock: true, collection: 'platinum', images: ['https://images.unsplash.com/photo-1543294001-f7cd5d7fb516?w=800&q=80'] },
+];
+
+export const GOLD_RATE = {
+  '24K': 6420,
+  '22K': 5890,
+  '18K': 4820,
+  change: '+₹120',
+  trend: 'up',
+  updated: new Date().toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit' })
+};
+
+export const REVIEWS = [
+  { id: 1, productId: 1, name: 'Priya Sharma', rating: 5, review: 'Absolutely stunning piece! The craftsmanship is exceptional and the gold quality is superb. Worth every rupee.', date: '2024-12-15', verified: true },
+  { id: 2, productId: 1, name: 'Ananya Krishnan', rating: 5, review: 'Bought this for my wedding and received so many compliments. The packaging was luxurious and delivery was on time.', date: '2024-11-20', verified: true },
+  { id: 3, productId: 6, name: 'Meera Iyer', rating: 5, review: 'The jhumkas are gorgeous! Lightweight yet look heavy and grand. Perfect for festive occasions.', date: '2025-01-05', verified: true },
+];

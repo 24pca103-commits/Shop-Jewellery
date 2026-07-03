@@ -1,0 +1,313 @@
+/* Gold Rate Banner */
+.gold-rate-banner {
+  background: linear-gradient(135deg, var(--charcoal) 0%, #2A2A2A 100%);
+  border-bottom: 2px solid rgba(139, 90, 43,0.3);
+  padding: 14px 0;
+}
+.gold-rate-inner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xl);
+  flex-wrap: wrap;
+}
+.gold-rate-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--gold);
+}
+.gold-rate-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.gold-rate-purity {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--gold-light);
+  letter-spacing: 0.08em;
+}
+.gold-rate-price {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-weight: 700;
+  color: white;
+}
+.gold-rate-change {
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+.gold-rate-change.up { color: #4CAF80; }
+.gold-rate-change.down { color: #EF5350; }
+.gold-rate-cta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: auto;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--gold);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: var(--transition-fast);
+}
+.gold-rate-cta:hover { color: var(--gold-light); }
+
+/* Product Showcase */
+.product-showcase { background: var(--cream); }
+.product-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: var(--space-xl);
+  flex-wrap: wrap;
+}
+.product-tab {
+  padding: 10px 24px;
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--charcoal-light);
+  background: var(--white);
+  border: 1.5px solid rgba(139, 90, 43,0.15);
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+.product-tab:hover { border-color: var(--gold); color: var(--gold); }
+.product-tab.active {
+  background: var(--gold);
+  color: white;
+  border-color: var(--gold);
+  box-shadow: var(--shadow-gold);
+}
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
+}
+.showcase-cta {
+  text-align: center;
+  margin-top: var(--space-2xl);
+}
+
+/* Why Section */
+.why-section { background: var(--cream-dark); }
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+}
+.why-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl) var(--space-lg);
+  box-shadow: var(--shadow-xs);
+  border: 1px solid rgba(139, 90, 43,0.08);
+  transition: var(--transition-base);
+}
+.why-card:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-4px);
+  border-color: rgba(139, 90, 43,0.2);
+}
+.why-icon-wrap {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  background: var(--gold-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+  margin-bottom: var(--space-md);
+}
+.why-title {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--charcoal);
+}
+.why-desc { font-size: 0.85rem; color: var(--charcoal-light); line-height: 1.65; }
+
+/* Try-On Banner */
+.tryon-banner-section {
+  background: linear-gradient(135deg, #0F0F0F 0%, #2D1B15 50%, #0A0A0A 100%);
+  padding: var(--space-3xl) 0;
+}
+.tryon-banner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3xl);
+  align-items: center;
+}
+.tryon-banner-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 600;
+  color: white;
+  margin: var(--space-sm) 0 var(--space-md);
+}
+.tryon-banner-desc {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.7;
+  margin-bottom: var(--space-xl);
+}
+.tryon-banner-visual { display: flex; justify-content: center; }
+.tryon-device {
+  width: 280px;
+  background: #1C100C;
+  border-radius: 36px;
+  padding: 12px;
+  border: 2px solid rgba(139, 90, 43,0.25);
+  box-shadow: 0 32px 80px rgba(0,0,0,0.5), 0 0 0 1px rgba(139, 90, 43,0.1);
+  animation: float 3.5s ease-in-out infinite;
+}
+.tryon-device-screen {
+  border-radius: 28px;
+  overflow: hidden;
+  position: relative;
+  aspect-ratio: 9/16;
+}
+.tryon-device-screen img { width: 100%; height: 100%; object-fit: cover; }
+.tryon-device-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.6), transparent 60%);
+  display: flex;
+  align-items: flex-end;
+  padding: var(--space-md);
+}
+.tryon-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: rgba(139, 90, 43,0.9);
+  color: white;
+  border-radius: var(--radius-full);
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+/* Gold Scheme */
+.gold-scheme-teaser { background: var(--cream); }
+.scheme-teaser-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3xl);
+  align-items: center;
+}
+.scheme-benefits {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.scheme-benefit {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: var(--charcoal-mid);
+}
+.scheme-benefit-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--gold);
+  flex-shrink: 0;
+}
+.scheme-teaser-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+}
+.stat-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-soft);
+  text-align: center;
+  border: 1px solid rgba(139, 90, 43,0.1);
+  transition: var(--transition-base);
+}
+.stat-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-4px); }
+.stat-value {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 1.75rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 4px;
+}
+.stat-label { font-size: 0.78rem; color: var(--charcoal-light); font-weight: 500; }
+
+/* Testimonials */
+.testimonials-section { background: var(--cream-dark); }
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+}
+.testimonial-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-soft);
+  border: 1px solid rgba(139, 90, 43,0.08);
+  transition: var(--transition-base);
+}
+.testimonial-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-4px); }
+.testimonial-stars { display: flex; gap: 3px; margin-bottom: var(--space-md); }
+.testimonial-text {
+  font-family: var(--font-serif-alt);
+  font-size: 0.95rem;
+  font-style: italic;
+  color: var(--charcoal-mid);
+  line-height: 1.7;
+  margin-bottom: var(--space-lg);
+}
+.testimonial-footer { display: flex; align-items: center; gap: var(--space-md); }
+.testimonial-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: white;
+  flex-shrink: 0;
+}
+.testimonial-name { font-weight: 600; font-size: 0.88rem; color: var(--charcoal); }
+.testimonial-location { font-size: 0.75rem; color: var(--charcoal-ghost); margin-top: 2px; }
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .products-grid { grid-template-columns: repeat(3, 1fr); }
+  .why-grid { grid-template-columns: repeat(2, 1fr); }
+  .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+  .products-grid { grid-template-columns: repeat(2, 1fr); }
+  .tryon-banner { grid-template-columns: 1fr; }
+  .tryon-banner-visual { display: none; }
+  .scheme-teaser-inner { grid-template-columns: 1fr; }
+  .testimonials-grid { grid-template-columns: 1fr; }
+  .gold-rate-inner { gap: var(--space-md); }
+}
+@media (max-width: 480px) {
+  .products-grid { grid-template-columns: 1fr 1fr; gap: var(--space-sm); }
+  .why-grid { grid-template-columns: 1fr; }
+}
