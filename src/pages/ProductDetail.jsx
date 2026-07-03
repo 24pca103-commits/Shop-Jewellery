@@ -94,10 +94,10 @@ export default function ProductDetail() {
               <button className="btn btn-gold btn-lg flex-1" onClick={handleCart}>
                 <ShoppingBag size={20} /> Add to Cart
               </button>
-              <button className={`btn btn-lg ${wished ? 'btn-outline' : 'btn-ghost'}`} onClick={handleWish} style={{ width: '60px', color: wished ? 'var(--gold)' : 'var(--charcoal-mid)', borderColor: wished ? 'var(--gold)' : 'rgba(0,0,0,0.1)' }}>
+              <button className={`btn btn-lg btn-icon ${wished ? 'btn-outline' : 'btn-ghost'}`} onClick={handleWish} style={{ width: '54px', height: '54px', padding: '0', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', color: wished ? 'var(--gold)' : 'var(--charcoal-mid)', borderColor: wished ? 'var(--gold)' : 'rgba(0,0,0,0.1)' }} title="Add to Wishlist">
                 <Heart size={20} fill={wished ? 'var(--gold)' : 'none'} />
               </button>
-              <button className="btn btn-ghost btn-lg" style={{ width: '60px', color: 'var(--charcoal-mid)', borderColor: 'rgba(0,0,0,0.1)' }}>
+              <button className="btn btn-lg btn-icon btn-ghost" style={{ width: '54px', height: '54px', padding: '0', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', color: 'var(--charcoal-mid)', borderColor: 'rgba(0,0,0,0.1)' }} title="Share">
                 <Share2 size={20} />
               </button>
             </div>

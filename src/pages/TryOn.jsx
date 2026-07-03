@@ -105,11 +105,14 @@ export default function TryOn() {
               }}
             >
               <img src={activeItem.image} alt="Jewel Overlay" />
-              <div className="jewel-controls">
-                <button onClick={() => setTransform(p => ({...p, scale: p.scale + 0.1}))}>+</button>
-                <button onClick={() => setTransform(p => ({...p, scale: Math.max(0.5, p.scale - 0.1)}))}>-</button>
-                <button onClick={() => setTransform(p => ({...p, rotate: p.rotate + 15}))}><RotateCw size={12}/></button>
-              </div>
+            </div>
+
+            {/* Fixed Control Bar (Prevents clipping/rotation issues) */}
+            <div className="jewel-controls-bar">
+              <button onClick={() => setTransform(p => ({...p, scale: p.scale + 0.15}))} title="Zoom In">+</button>
+              <button onClick={() => setTransform(p => ({...p, scale: Math.max(0.5, p.scale - 0.15)}))} title="Zoom Out">-</button>
+              <button onClick={() => setTransform(p => ({...p, rotate: p.rotate + 15}))} title="Rotate Right"><RotateCw size={12}/></button>
+              <button onClick={() => setTransform(p => ({...p, rotate: p.rotate - 15}))} title="Rotate Left" style={{ transform: 'scaleX(-1)' }}><RotateCw size={12}/></button>
             </div>
 
             <div className="canvas-overlay-badge">
