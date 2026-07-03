@@ -39,6 +39,7 @@ export default function Navbar() {
   };
 
   const navLinks = [
+    { label: 'Home', href: '/', dropdown: null },
     { label: 'Gold', href: '/catalog/gold', dropdown: null },
     { label: 'Diamond', href: '/catalog/diamond', dropdown: null },
     { label: 'Bridal', href: '/catalog/bridal', dropdown: null },
