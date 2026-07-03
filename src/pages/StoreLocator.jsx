@@ -11,7 +11,7 @@ export default function StoreLocator() {
       <div className="stores-header">
         <div className="container text-center">
           <h1 className="section-title">Our Boutiques</h1>
-          <p className="stores-subtitle">Experience the luxury of Vaibhav Jewels in person. Find a store near you.</p>
+          <p className="stores-subtitle">Experience the luxury of Jewellery Shop in person. Find a store near you.</p>
         </div>
       </div>
 

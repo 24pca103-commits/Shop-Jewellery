@@ -27,7 +27,7 @@ export default function Checkout() {
       <div className="container">
         <div className="checkout-header">
           <Link to="/" className="checkout-logo">
-            <span style={{fontFamily: 'var(--font-serif)', fontSize: '1.5rem', fontWeight: 600}}>Vaibhav Jewels</span>
+            <span style={{fontFamily: 'var(--font-serif)', fontSize: '1.5rem', fontWeight: 600}}>Jewellery Shop</span>
           </Link>
           <div className="secure-badge"><Lock size={14}/> Secure Checkout</div>
         </div>

@@ -87,18 +87,18 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Why Vaibhav */}
+      {/* Why Jewellery Shop */}
       <section className="section why-section">
         <div className="container">
           <div className="section-header">
             <span className="eyebrow">Why Choose Us</span>
-            <h2 className="section-title">The Vaibhav Promise</h2>
+            <h2 className="section-title">The Jewellery Shop Promise</h2>
           </div>
           <div className="why-grid">
             {[
               { icon: Shield, title: 'BIS Hallmarked', desc: 'Every piece certified by Bureau of Indian Standards for guaranteed gold purity.' },
               { icon: Award, title: 'GIA Diamonds', desc: 'All diamonds come with GIA/IGI certification for complete transparency.' },
-              { icon: Star, title: '4.9★ Rated', desc: 'Over 5 lakh satisfied customers across India trust Vaibhav Jewels.' },
+              { icon: Star, title: '4.9★ Rated', desc: 'Over 5 lakh satisfied customers across India trust Jewellery Shop.' },
               { icon: Gift, title: 'Lifetime Exchange', desc: 'Exchange your jewellery at current gold value — no questions asked.' },
               { icon: Sparkles, title: 'Master Craftsmen', desc: 'Handcrafted by skilled artisans with decades of jewellery-making expertise.' },
               { icon: TrendingUp, title: 'Best Gold Rate', desc: 'Transparent pricing with live gold rates. No hidden charges, ever.' },
@@ -188,7 +188,7 @@ export default function Home() {
           </div>
           <div className="testimonials-grid">
             {[
-              { name: 'Priya Sharma', location: 'Hyderabad', text: 'Bought my bridal set from Vaibhav Jewels and it was absolutely breathtaking. The quality and craftsmanship are unmatched. Got so many compliments at my wedding!', rating: 5, occasion: 'Wedding Jewellery' },
+              { name: 'Priya Sharma', location: 'Hyderabad', text: 'Bought my bridal set from Jewellery Shop and it was absolutely breathtaking. The quality and craftsmanship are unmatched. Got so many compliments at my wedding!', rating: 5, occasion: 'Wedding Jewellery' },
               { name: 'Sneha Reddy', location: 'Bangalore', text: 'The diamond mangalsutra I bought is stunning. The hallmarking certificate gave us so much confidence. Will definitely shop again for all my jewellery needs.', rating: 5, occasion: 'Mangalsutra' },
               { name: 'Kavitha Iyer', location: 'Chennai', text: 'Virtual try-on feature is a game changer! Tried multiple necklaces from home and chose the perfect one. Delivery was also super fast and beautifully packed.', rating: 5, occasion: 'Diamond Necklace' },
             ].map(t => (

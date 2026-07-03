@@ -20,7 +20,7 @@ const footerLinks = {
     { label: 'FAQ', href: '/faq' },
   ],
   'Company': [
-    { label: 'About Vaibhav Jewels', href: '/about' },
+    { label: 'About Jewellery Shop', href: '/about' },
     { label: 'Careers', href: '/careers' },
     { label: 'Blog', href: '/blog' },
     { label: 'Store Locator', href: '/stores' },
@@ -69,7 +69,7 @@ export default function Footer() {
                   <text x="32" y="39" textAnchor="middle" fontFamily="Georgia, serif" fontSize="18" fontWeight="bold" fill="#8B5A2B">V</text>
                 </svg>
                 <div>
-                  <span className="footer-brand-name">Vaibhav Jewels</span>
+                  <span className="footer-brand-name">Jewellery Shop</span>
                   <span className="footer-tagline">Crafting Timeless Moments</span>
                 </div>
               </div>
@@ -81,8 +81,8 @@ export default function Footer() {
                 <a href="tel:1800-102-9898" className="footer-contact-item">
                   <Phone size={14} /> 1800-102-9898 (Toll Free)
                 </a>
-                <a href="mailto:care@vaibhavjewels.com" className="footer-contact-item">
-                  <Mail size={14} /> care@vaibhavjewels.com
+                <a href="mailto:care@jewelleryshop.com" className="footer-contact-item">
+                  <Mail size={14} /> care@jewelleryshop.com
                 </a>
                 <span className="footer-contact-item">
                   <MapPin size={14} /> Hyderabad, Telangana, India
@@ -150,7 +150,7 @@ export default function Footer() {
       <div className="footer-bottom">
         <div className="container">
           <div className="footer-bottom-inner">
-            <p>© 2025 Vaibhav Jewels. All rights reserved.</p>
+            <p>© 2025 Jewellery Shop. All rights reserved.</p>
             <div className="footer-bottom-links">
               <Link to="/privacy" className="footer-bottom-link">Privacy Policy</Link>
               <Link to="/terms" className="footer-bottom-link">Terms of Service</Link>

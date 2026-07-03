@@ -100,7 +100,7 @@ export default function GoldScheme() {
                     <span>₹{totalPaid.toLocaleString('en-IN')}</span>
                   </div>
                   <div className="result-row bonus-row">
-                    <span>Vaibhav Bonus</span>
+                    <span>Jewellery Shop Bonus</span>
                     <span>+ ₹{bonus.toLocaleString('en-IN')}</span>
                   </div>
                   <div className="result-row total-row">

@@ -61,7 +61,7 @@ export default function Navbar() {
           </div>
           <div className="gold-ticker">
             <span className="ticker-label">Live Gold Rate:</span>
-            {Object.entries(GOLD_RATE).filter(([k]) => ['24K','22K','18K'].includes(k)).map(([k, v]) => (
+            {Object.entries(GOLD_RATE).filter(([k]) => ['24K', '22K', '18K'].includes(k)).map(([k, v]) => (
               <span key={k} className="ticker-item">
                 <span className="ticker-purity">{k}</span>
                 <span className="ticker-price">₹{v.toLocaleString()}/g</span>
@@ -82,13 +82,13 @@ export default function Navbar() {
           <Link to="/" className="navbar-logo">
             <div className="logo-emblem">
               <svg width="32" height="32" viewBox="0 0 64 64" fill="none">
-                <polygon points="32,4 60,22 60,42 32,60 4,42 4,22" fill="none" stroke="#8B5A2B" strokeWidth="2.5"/>
-                <polygon points="32,12 52,26 52,38 32,52 12,38 12,26" fill="rgba(139, 90, 43,0.18)"/>
+                <polygon points="32,4 60,22 60,42 32,60 4,42 4,22" fill="none" stroke="#8B5A2B" strokeWidth="2.5" />
+                <polygon points="32,12 52,26 52,38 32,52 12,38 12,26" fill="rgba(139, 90, 43,0.18)" />
                 <text x="32" y="39" textAnchor="middle" fontFamily="Georgia, serif" fontSize="18" fontWeight="bold" fill="#8B5A2B">V</text>
               </svg>
             </div>
             <div className="logo-text">
-              <span className="logo-brand">Vaibhav</span>
+              <span className="logo-brand">Jewellery Shop</span>
               <span className="logo-sub">JEWELS</span>
             </div>
           </Link>
