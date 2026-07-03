@@ -168,8 +168,19 @@ export default function Navbar() {
         </div>
       )}
 
+      {/* Mobile Menu Backdrop */}
+      {mobileOpen && (
+        <div className="mobile-backdrop" onClick={() => setMobileOpen(false)} />
+      )}
+
       {/* Mobile Menu */}
       <div className={`mobile-menu ${mobileOpen ? 'open' : ''}`}>
+        <div className="mobile-header">
+          <span className="mobile-title">Menu</span>
+          <button className="mobile-close" onClick={() => setMobileOpen(false)} aria-label="Close menu">
+            <X size={22} />
+          </button>
+        </div>
         <div className="mobile-menu-inner">
           {navLinks.map(link => (
             <Link key={link.label} to={link.href} className="mobile-nav-link" onClick={() => setMobileOpen(false)}>
