@@ -11,9 +11,7 @@ import ToastContainer from './components/Toast';
 import Home from './pages/Home';
 import Catalog from './pages/Catalog';
 import ProductDetail from './pages/ProductDetail';
-import TryOn from './pages/TryOn';
 import GoldScheme from './pages/GoldScheme';
-import StoreLocator from './pages/StoreLocator';
 import Account from './pages/Account';
 import Checkout from './pages/Checkout';
 import Wishlist from './pages/Wishlist';
@@ -34,9 +32,7 @@ function App() {
               <Route path="/catalog" element={<Catalog />} />
               <Route path="/catalog/:category" element={<Catalog />} />
               <Route path="/product/:id" element={<ProductDetail />} />
-              <Route path="/try-on" element={<TryOn />} />
               <Route path="/gold-scheme" element={<GoldScheme />} />
-              <Route path="/stores" element={<StoreLocator />} />
               <Route path="/account" element={<Account />} />
               <Route path="/checkout" element={<Checkout />} />
               <Route path="/wishlist" element={<Wishlist />} />

@@ -115,35 +115,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Virtual Try-On Banner */}
-      <section className="tryon-banner-section">
-        <div className="container">
-          <div className="tryon-banner">
-            <div className="tryon-banner-content">
-              <span className="eyebrow" style={{color:'var(--gold-light)'}}>AI-Powered Experience</span>
-              <h2 className="tryon-banner-title">Try Jewellery Virtually</h2>
-              <p className="tryon-banner-desc">
-                Use our advanced AI technology to try on rings, necklaces, earrings and more 
-                from the comfort of your home. Upload a photo or use live camera.
-              </p>
-              <div style={{display:'flex',gap:'12px',flexWrap:'wrap'}}>
-                <Link to="/try-on" className="btn btn-gold btn-lg">Try It Now</Link>
-                <Link to="/catalog" className="btn btn-ghost btn-lg">Shop Collection</Link>
-              </div>
-            </div>
-            <div className="tryon-banner-visual">
-              <div className="tryon-device">
-                <div className="tryon-device-screen">
-                  <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&q=80" alt="Virtual Try-On" />
-                  <div className="tryon-device-overlay">
-                    <div className="tryon-badge">✨ AI Try-On Active</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+
 
       {/* Gold Scheme Teaser */}
       <section className="section gold-scheme-teaser">

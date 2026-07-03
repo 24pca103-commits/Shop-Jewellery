@@ -20,12 +20,10 @@ const footerLinks = {
     { label: 'FAQ', href: '/faq' },
   ],
   'Company': [
-    { label: 'About Jewellery Shop', href: '/about' },
+    { label: 'About Kriyaalaya Jewellery', href: '/about' },
     { label: 'Careers', href: '/careers' },
     { label: 'Blog', href: '/blog' },
-    { label: 'Store Locator', href: '/stores' },
     { label: 'Gold Saving Scheme', href: '/gold-scheme' },
-    { label: 'Virtual Try-On', href: '/try-on' },
   ],
 };
 
@@ -63,14 +61,14 @@ export default function Footer() {
             {/* Brand */}
             <div className="footer-brand">
               <div className="footer-logo">
-                <svg width="36" height="36" viewBox="0 0 64 64" fill="none">
-                  <polygon points="32,4 60,22 60,42 32,60 4,42 4,22" fill="none" stroke="#8B5A2B" strokeWidth="2.5"/>
-                  <polygon points="32,12 52,26 52,38 32,52 12,38 12,26" fill="rgba(139, 90, 43,0.18)"/>
-                  <text x="32" y="39" textAnchor="middle" fontFamily="Georgia, serif" fontSize="18" fontWeight="bold" fill="#8B5A2B">V</text>
+                <svg width="36" height="36" viewBox="0 0 100 100" fill="none" stroke="#8B5A2B" strokeWidth="4">
+                  <path d="M50 10 C 20 45, 15 70, 30 85 C 40 95, 60 95, 70 85 C 85 70, 80 45, 50 10 Z" fill="rgba(139, 90, 43, 0.05)" />
+                  <path d="M50 40 C 45 55, 30 60, 30 60 C 40 65, 50 60, 50 60 C 50 60, 60 65, 70 60 C 70 60, 55 55, 50 40 Z" fill="rgba(139, 90, 43, 0.4)" strokeWidth="2" />
+                  <path d="M50 60 L50 80" strokeWidth="3" />
+                  <circle cx="50" cy="85" r="3" fill="#8B5A2B" />
                 </svg>
                 <div>
-                  <span className="footer-brand-name">Jewellery Shop</span>
-                  <span className="footer-tagline">Crafting Timeless Moments</span>
+                  <span className="footer-brand-name" style={{textTransform: 'uppercase', fontSize: '1.2rem', letterSpacing: '0.05em'}}>Kriyaalaya Jewellery</span>
                 </div>
               </div>
               <p className="footer-about">
@@ -79,13 +77,16 @@ export default function Footer() {
               </p>
               <div className="footer-contact-items">
                 <a href="tel:1800-102-9898" className="footer-contact-item">
-                  <Phone size={14} /> 1800-102-9898 (Toll Free)
+                  <Phone size={14} /> 1800-102-9898
                 </a>
-                <a href="mailto:care@jewelleryshop.com" className="footer-contact-item">
-                  <Mail size={14} /> care@jewelleryshop.com
+                <a href="mailto:care@kriyaalayajewellery.com" className="footer-contact-item">
+                  <Mail size={14} /> care@kriyaalayajewellery.com
                 </a>
-                <span className="footer-contact-item">
-                  <MapPin size={14} /> Hyderabad, Telangana, India
+                <span className="footer-contact-item" style={{alignItems: 'flex-start'}}>
+                  <MapPin size={14} style={{marginTop: '4px', flexShrink: 0}} />
+                  <span style={{lineHeight: 1.4}}>
+                    No.5, Jaya Complex, Thadagam Main Rd, PMR Nagar,<br/>TVS Nagar, Coimbatore, Tamil Nadu 641025
+                  </span>
                 </span>
               </div>
               <div className="footer-socials">
@@ -130,17 +131,6 @@ export default function Footer() {
                   <ArrowRight size={16} />
                 </button>
               </form>
-              <div className="footer-apps">
-                <h5 className="footer-apps-title">Download Our App</h5>
-                <div className="app-badges">
-                  <a href="#" className="app-badge">
-                    <span>iOS</span> App Store
-                  </a>
-                  <a href="#" className="app-badge">
-                    <span>Android</span> Google Play
-                  </a>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -150,7 +140,7 @@ export default function Footer() {
       <div className="footer-bottom">
         <div className="container">
           <div className="footer-bottom-inner">
-            <p>© 2025 Jewellery Shop. All rights reserved.</p>
+            <p>© 2026 Kriyaalaya Jewellery. All rights reserved.</p>
             <div className="footer-bottom-links">
               <Link to="/privacy" className="footer-bottom-link">Privacy Policy</Link>
               <Link to="/terms" className="footer-bottom-link">Terms of Service</Link>

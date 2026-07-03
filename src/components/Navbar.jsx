@@ -45,7 +45,6 @@ export default function Navbar() {
     { label: 'Bridal', href: '/catalog/bridal', dropdown: null },
     { label: 'Collections', href: '/catalog', hasDropdown: true },
     { label: 'Gold Scheme', href: '/gold-scheme', dropdown: null },
-    { label: 'Stores', href: '/stores', dropdown: null },
   ];
 
   return (
@@ -58,7 +57,7 @@ export default function Navbar() {
             <span>1800-102-9898</span>
             <span className="topbar-sep">|</span>
             <MapPin size={12} />
-            <Link to="/stores" className="topbar-link">Find a Store</Link>
+            <span className="topbar-link" style={{cursor: 'default'}}>Coimbatore, TN</span>
           </div>
           <div className="gold-ticker">
             <span className="ticker-label">Live Gold Rate:</span>
@@ -82,15 +81,15 @@ export default function Navbar() {
           {/* Logo */}
           <Link to="/" className="navbar-logo">
             <div className="logo-emblem">
-              <svg width="32" height="32" viewBox="0 0 64 64" fill="none">
-                <polygon points="32,4 60,22 60,42 32,60 4,42 4,22" fill="none" stroke="#8B5A2B" strokeWidth="2.5" />
-                <polygon points="32,12 52,26 52,38 32,52 12,38 12,26" fill="rgba(139, 90, 43,0.18)" />
-                <text x="32" y="39" textAnchor="middle" fontFamily="Georgia, serif" fontSize="18" fontWeight="bold" fill="#8B5A2B">V</text>
+              <svg width="32" height="32" viewBox="0 0 100 100" fill="none" stroke="#8B5A2B" strokeWidth="4">
+                <path d="M50 10 C 20 45, 15 70, 30 85 C 40 95, 60 95, 70 85 C 85 70, 80 45, 50 10 Z" fill="rgba(139, 90, 43, 0.05)" />
+                <path d="M50 40 C 45 55, 30 60, 30 60 C 40 65, 50 60, 50 60 C 50 60, 60 65, 70 60 C 70 60, 55 55, 50 40 Z" fill="rgba(139, 90, 43, 0.4)" strokeWidth="2" />
+                <path d="M50 60 L50 80" strokeWidth="3" />
+                <circle cx="50" cy="85" r="3" fill="#8B5A2B" />
               </svg>
             </div>
             <div className="logo-text">
-              <span className="logo-brand">Jewellery Shop</span>
-              <span className="logo-sub">JEWELS</span>
+              <span className="logo-brand" style={{textTransform: 'uppercase', fontSize: '1.2rem', letterSpacing: '0.05em'}}>Kriyaalaya Jewellery</span>
             </div>
           </Link>
 

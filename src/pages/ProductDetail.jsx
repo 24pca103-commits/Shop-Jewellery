@@ -103,9 +103,6 @@ export default function ProductDetail() {
             </div>
 
             <div className="secondary-actions">
-              <Link to="/try-on" className="btn btn-outline flex-1">
-                <Sparkles size={16} style={{marginRight: '6px'}} /> Virtual Try-On
-              </Link>
               <button className="btn btn-outline flex-1">
                 Book Video Consultation
               </button>

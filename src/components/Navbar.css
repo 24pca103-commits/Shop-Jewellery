@@ -1,7 +1,7 @@
 /* ---- Navbar Styles ---- */
 .navbar-topbar {
-  background: var(--charcoal);
-  color: rgba(255,255,255,0.75);
+  background: #0f0f0f;
+  color: #ffffff;
   font-size: 0.78rem;
   padding: 7px 0;
   position: relative;
@@ -45,7 +45,7 @@
   color: var(--gold-light);
   font-weight: 600;
 }
-.ticker-price { color: rgba(255,255,255,0.85); }
+.ticker-price { color: #ffffff; font-weight: 600; }
 .ticker-change {
   display: flex;
   align-items: center;
