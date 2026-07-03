@@ -304,9 +304,23 @@ h1, h2, h3, h4, h5 {
   margin: 0 auto;
   padding: 0 var(--space-xl);
 }
+@media (max-width: 1024px) {
+  .container { padding: 0 var(--space-lg); }
+}
 @media (max-width: 768px) {
   .container { padding: 0 var(--space-md); }
   .section { padding: var(--space-2xl) 0; }
+  .section-sm { padding: var(--space-xl) 0; }
+}
+@media (max-width: 480px) {
+  .container { padding: 0 var(--space-sm); }
+  .section { padding: var(--space-xl) 0; }
+  .section-sm { padding: var(--space-lg) 0; }
+  .btn { padding: 12px 24px; font-size: 0.82rem; }
+  .btn-lg { padding: 14px 28px; font-size: 0.875rem; }
+  .section-header { margin-bottom: var(--space-xl); }
+  .display-title { font-size: clamp(1.8rem, 7vw, 2.8rem); }
+  .section-title { font-size: clamp(1.4rem, 5vw, 2rem); }
 }
 
 /* ---- Section Header ---- */
