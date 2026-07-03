@@ -3,13 +3,18 @@
   background: linear-gradient(135deg, var(--charcoal) 0%, #2A2A2A 100%);
   border-bottom: 2px solid rgba(139, 90, 43,0.3);
   padding: 14px 0;
+  overflow: hidden;
 }
 .gold-rate-inner {
   display: flex;
   align-items: center;
   gap: var(--space-xl);
   flex-wrap: wrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
 }
+.gold-rate-inner::-webkit-scrollbar { display: none; }
 .gold-rate-label {
   display: flex;
   align-items: center;
@@ -305,9 +310,24 @@
   .tryon-banner-visual { display: none; }
   .scheme-teaser-inner { grid-template-columns: 1fr; }
   .testimonials-grid { grid-template-columns: 1fr; }
-  .gold-rate-inner { gap: var(--space-md); }
+  .gold-rate-inner { gap: var(--space-md); flex-wrap: nowrap; justify-content: flex-start; }
+  .gold-rate-cta { margin-left: 0; }
+  .why-grid { grid-template-columns: repeat(2, 1fr); }
+  .tryon-banner-title { font-size: clamp(1.5rem, 5vw, 2.2rem); }
 }
 @media (max-width: 480px) {
-  .products-grid { grid-template-columns: 1fr 1fr; gap: var(--space-sm); }
+  .products-grid { grid-template-columns: repeat(2, 1fr); gap: var(--space-sm); }
   .why-grid { grid-template-columns: 1fr; }
+  .scheme-teaser-stats { grid-template-columns: repeat(2, 1fr); gap: var(--space-sm); }
+  .stat-card { padding: var(--space-md); }
+  .stat-value { font-size: 1.4rem; }
+  .product-tabs { gap: 6px; }
+  .product-tab { padding: 8px 14px; font-size: 0.78rem; }
+  .tryon-banner-desc { font-size: 0.88rem; }
+  .testimonials-grid { grid-template-columns: 1fr; }
+  .gold-rate-banner { padding: 10px 0; }
+}
+@media (max-width: 360px) {
+  .products-grid { grid-template-columns: 1fr; }
+  .scheme-teaser-stats { grid-template-columns: 1fr; }
 }

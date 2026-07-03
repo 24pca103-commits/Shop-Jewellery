@@ -6,6 +6,7 @@
   padding: 7px 0;
   position: relative;
   z-index: 101;
+  overflow: hidden;
 }
 .navbar-topbar-inner {
   max-width: 1380px;
@@ -15,6 +16,7 @@
   align-items: center;
   justify-content: space-between;
   gap: var(--space-md);
+  overflow: hidden;
 }
 .topbar-sep { opacity: 0.3; }
 .topbar-link { color: var(--gold-light); transition: var(--transition-fast); }
@@ -78,6 +80,7 @@
   align-items: center;
   justify-content: space-between;
   gap: var(--space-xl);
+  overflow: hidden;
 }
 
 /* Logo */
@@ -355,7 +358,19 @@
   .navbar-topbar-inner { flex-direction: column; gap: 4px; padding: 4px var(--space-md); }
   .gold-ticker { flex-wrap: wrap; justify-content: center; gap: 8px; }
 }
+@media (max-width: 768px) {
+  .navbar-inner { padding: 0 var(--space-md); gap: var(--space-md); }
+  .navbar-topbar { display: none; }
+  .logo-brand { font-size: 1.15rem; }
+}
 @media (max-width: 480px) {
-  .navbar-inner { padding: 0 var(--space-md); }
+  .navbar-inner { padding: 0 var(--space-sm); height: 58px; }
   .gold-ticker { display: none; }
+  .navbar-topbar { display: none; }
+  .nav-action-btn { width: 36px; height: 36px; }
+  .logo-brand { font-size: 1rem; }
+  .logo-sub { display: none; }
+}
+@media (max-width: 360px) {
+  .navbar-inner { padding: 0 var(--space-xs); }
 }

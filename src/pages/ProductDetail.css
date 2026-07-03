@@ -167,8 +167,29 @@
   .product-gallery { position: relative; top: 0; }
   .gallery-main { max-width: 600px; margin: 0 auto; }
 }
+@media (max-width: 768px) {
+  .product-title { font-size: 1.6rem; }
+  .price { font-size: 1.5rem; }
+  .specs-grid { grid-template-columns: 1fr; }
+  .action-buttons { flex-wrap: wrap; }
+  .secondary-actions { flex-direction: column; }
+}
 @media (max-width: 600px) {
   .action-buttons { flex-wrap: wrap; }
   .action-buttons .btn-lg { flex: 1; min-width: 45%; }
   .secondary-actions { flex-direction: column; }
+  .gallery-thumbs { gap: var(--space-sm); }
+  .gallery-thumb { width: 64px; height: 64px; }
+}
+@media (max-width: 480px) {
+  .product-title { font-size: 1.35rem; }
+  .price { font-size: 1.3rem; }
+  .action-buttons { flex-direction: column; }
+  .action-buttons .btn-lg { width: 100%; flex: unset; min-width: unset; }
+  .emi-banner { flex-direction: column; text-align: center; }
+  .product-breadcrumb { font-size: 0.72rem; gap: 5px; }
+}
+@media (max-width: 360px) {
+  .product-title { font-size: 1.2rem; }
+  .trust-badges { gap: 8px; }
 }

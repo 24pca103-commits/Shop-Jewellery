@@ -40,4 +40,18 @@
 @media (max-width: 600px) {
   .store-detail-grid { grid-template-columns: 1fr; gap: var(--space-md); }
   .store-actions { flex-direction: column; }
+  .store-map { height: 250px; }
+  .stores-header { padding: var(--space-lg) 0; }
+  .store-detail-card { padding: var(--space-lg); }
+}
+@media (max-width: 480px) {
+  .store-detail-header { flex-direction: column; align-items: flex-start; gap: var(--space-sm); }
+  .store-detail-header h2 { font-size: 1.25rem; }
+  .store-name { font-size: 0.95rem; }
+  .store-card { padding: var(--space-sm); }
+  .store-map { height: 200px; }
+}
+@media (max-width: 360px) {
+  .store-features { gap: 4px; }
+  .feature-pill { font-size: 0.68rem; padding: 3px 8px; }
 }

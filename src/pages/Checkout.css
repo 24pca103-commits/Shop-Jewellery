@@ -43,3 +43,22 @@
   .checkout-layout { grid-template-columns: 1fr; }
   .form-grid { grid-template-columns: 1fr; }
 }
+@media (max-width: 768px) {
+  .checkout-header { flex-direction: column; align-items: flex-start; gap: var(--space-sm); padding: var(--space-lg) 0; }
+  .form-section { padding: var(--space-lg); }
+  .checkout-steps { gap: var(--space-sm); }
+}
+@media (max-width: 480px) {
+  .checkout-page { padding-bottom: var(--space-2xl); }
+  .form-section { padding: var(--space-md); }
+  .form-actions { flex-direction: column-reverse; }
+  .form-actions .btn { width: 100%; justify-content: center; }
+  .checkout-steps { font-size: 0.78rem; }
+  .order-summary-box { padding: var(--space-md); }
+  .summary-items { max-height: 260px; }
+  .grand-total { font-size: 1rem; }
+}
+@media (max-width: 360px) {
+  .checkout-steps { display: none; }
+  .form-section h2 { font-size: 1.2rem; }
+}

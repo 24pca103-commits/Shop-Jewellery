@@ -113,3 +113,13 @@
   .featured-header { flex-direction: column; align-items: flex-start; gap: var(--space-md); }
   .collection-card { flex: 0 0 260px; height: 360px; }
 }
+@media (max-width: 480px) {
+  .collection-card { flex: 0 0 220px; height: 300px; }
+  .featured-scroll { gap: var(--space-md); }
+  .collection-name { font-size: 1.1rem; }
+  .featured-controls { align-self: flex-end; }
+}
+@media (max-width: 360px) {
+  .collection-card { flex: 0 0 185px; height: 260px; }
+  .collection-content { padding: var(--space-md); }
+}

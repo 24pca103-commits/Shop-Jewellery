@@ -204,8 +204,20 @@
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .trust-grid { grid-template-columns: repeat(2, 1fr); }
   .footer-bottom-inner { flex-direction: column; text-align: center; }
+  .footer-bottom-links { flex-wrap: wrap; justify-content: center; }
+  .footer-main { padding: var(--space-2xl) 0 var(--space-xl); }
 }
 @media (max-width: 480px) {
-  .footer-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; gap: var(--space-lg); }
+  .trust-grid { grid-template-columns: 1fr 1fr; gap: var(--space-sm); }
+  .footer-trust { padding: var(--space-lg) 0; }
+  .footer-newsletter { flex-direction: row; }
+  .footer-email-input { font-size: 0.75rem; }
+  .app-badges { flex-direction: column; }
+  .footer-payment-icons { flex-wrap: wrap; justify-content: center; }
+}
+@media (max-width: 360px) {
   .trust-grid { grid-template-columns: 1fr; }
+  .trust-item { flex-direction: column; text-align: center; }
+  .footer-socials { flex-wrap: wrap; }
 }

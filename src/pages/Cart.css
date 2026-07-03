@@ -24,3 +24,19 @@
   .cart-item-full { flex-direction: column; position: relative; }
   .cart-item-total { position: absolute; top: var(--space-md); right: var(--space-md); }
 }
+@media (max-width: 600px) {
+  .cart-page { padding: var(--space-xl) 0; }
+  .cart-img-full { width: 90px; height: 90px; }
+  .cart-name-full { font-size: 1rem; }
+  .cart-actions-full { flex-wrap: wrap; gap: var(--space-md); }
+}
+@media (max-width: 480px) {
+  .cart-img-full { width: 75px; height: 75px; }
+  .cart-item-full { padding: var(--space-sm); gap: var(--space-md); }
+  .order-summary { padding: var(--space-lg); }
+  .summary-row.total { font-size: 1.2rem; }
+}
+@media (max-width: 360px) {
+  .cart-name-full { font-size: 0.9rem; }
+  .cart-img-full { width: 60px; height: 60px; }
+}

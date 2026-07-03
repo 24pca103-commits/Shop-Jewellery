@@ -25,6 +25,7 @@
   margin: 0 auto;
   padding: var(--space-xl);
   align-items: start;
+  overflow: hidden;
 }
 
 .tryon-panel {
@@ -199,11 +200,25 @@
 .active-item-specs { font-size: 0.8rem; color: rgba(255,255,255,0.5); }
 
 @media (max-width: 1024px) {
-  .tryon-workspace { grid-template-columns: 1fr; }
+  .tryon-workspace { grid-template-columns: 1fr; padding: var(--space-md); }
   .tryon-controls-left { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md); }
   .tryon-panel { margin-bottom: 0; }
 }
 @media (max-width: 768px) {
   .tryon-controls-left { grid-template-columns: 1fr; }
   .tryon-canvas { max-width: 100%; }
+  .tryon-header { padding: var(--space-xl) 0 var(--space-lg); }
+  .tryon-subtitle { font-size: 0.9rem; }
+  .canvas-actions { flex-wrap: wrap; gap: var(--space-sm); }
+}
+@media (max-width: 480px) {
+  .tryon-workspace { padding: var(--space-sm); gap: var(--space-sm); }
+  .tryon-panel { padding: var(--space-sm); }
+  .canvas-actions .btn { flex: 1; font-size: 0.78rem; padding: 10px 12px; }
+  .tryon-catalog { max-height: 280px; }
+  .panel-title { font-size: 0.78rem; }
+}
+@media (max-width: 360px) {
+  .canvas-actions { flex-direction: column; }
+  .canvas-actions .btn { width: 100%; }
 }
