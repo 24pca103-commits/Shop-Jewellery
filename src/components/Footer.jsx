@@ -61,7 +61,7 @@ export default function Footer() {
           <div className="footer-grid">
             <div className="footer-brand">
               <div className="footer-logo" style={{ display: 'block' }}>
-                <img src="/logo.png" alt="Kriyaalaya Jewellery" style={{height: '90px', objectFit: 'contain', mixBlendMode: 'multiply'}} />
+                <img src="/logo.png" alt="Kriyaalaya Jewellery" style={{height: '90px', objectFit: 'contain'}} />
               </div>
               <p className="footer-about">
                 India's most trusted premium jewellery brand, crafting exquisite gold, diamond, 

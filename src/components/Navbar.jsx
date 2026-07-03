@@ -80,7 +80,7 @@ export default function Navbar() {
       <nav className={`navbar ${scrolled ? 'navbar-scrolled' : ''}`}>
         <div className="navbar-inner">
           <Link to="/" className="navbar-logo" style={{ padding: '4px 0' }}>
-            <img src="/logo.png" alt="Kriyaalaya Jewellery" style={{ height: '70px', objectFit: 'contain', mixBlendMode: 'multiply' }} />
+            <img src="/image.png" alt="Kriyaalaya Jewellery" style={{ height: '70px', objectFit: 'contain' }} />
           </Link>
 
           {/* Desktop Nav Links */}

@@ -46,7 +46,11 @@ export default function ProductDetail() {
           {/* Gallery */}
           <div className="product-gallery">
             <div className="gallery-main">
-              <img src={images[activeImg]} alt={product.name} className="gallery-main-img" />
+              {activeImg === 'video' && product.video ? (
+                <video src={product.video} controls autoPlay loop className="gallery-main-img" style={{ backgroundColor: '#000' }} />
+              ) : (
+                <img src={images[activeImg]} alt={product.name} className="gallery-main-img" />
+              )}
               <button className="gallery-action-btn view-360-btn" title="360 View">
                 <RotateCcw size={16} /> 360° View
               </button>
@@ -54,17 +58,19 @@ export default function ProductDetail() {
                 <Maximize2 size={16} />
               </button>
             </div>
-            {images.length > 1 && (
+            {(images.length > 1 || product.video) && (
               <div className="gallery-thumbs">
                 {images.map((img, i) => (
                   <button key={i} className={`gallery-thumb ${i === activeImg ? 'active' : ''}`} onClick={() => setActiveImg(i)}>
                     <img src={img} alt={`Thumb ${i+1}`} />
                   </button>
                 ))}
-                <button className="gallery-thumb video-thumb">
-                  <PlayCircle size={24} />
-                  <span>Video</span>
-                </button>
+                {product.video && (
+                  <button className={`gallery-thumb video-thumb ${activeImg === 'video' ? 'active' : ''}`} onClick={() => setActiveImg('video')}>
+                    <PlayCircle size={24} />
+                    <span>Video</span>
+                  </button>
+                )}
               </div>
             )}
           </div>
