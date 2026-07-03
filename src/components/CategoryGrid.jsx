@@ -19,15 +19,13 @@ export default function CategoryGrid() {
               className="category-card"
               style={{ animationDelay: `${i * 0.05}s` }}
             >
-              <div className="category-card-inner">
-                <div className="category-emoji">{cat.emoji}</div>
-                <div className="category-shine" />
-                <div className="category-info">
-                  <h3 className="category-label">{cat.label}</h3>
-                  <p className="category-desc">{cat.description}</p>
-                  <span className="category-count">{cat.count} designs</span>
-                </div>
-                <div className="category-arrow">→</div>
+              <div className="category-card-img-wrap">
+                <img src={cat.image} alt={cat.label} className="category-card-img" loading="lazy" />
+                <div className="category-card-overlay"></div>
+              </div>
+              <div className="category-card-content">
+                <h3 className="category-card-title">{cat.label}</h3>
+                <span className="category-card-link">Explore <span style={{marginLeft:'4px'}}>→</span></span>
               </div>
             </Link>
           ))}

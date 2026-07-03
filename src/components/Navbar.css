@@ -1,7 +1,8 @@
 /* ---- Navbar Styles ---- */
 .navbar-topbar {
-  background: #0f0f0f;
-  color: #ffffff;
+  background: var(--white);
+  color: var(--charcoal);
+  border-bottom: 1px solid rgba(139, 90, 43, 0.1);
   font-size: 0.78rem;
   padding: 7px 0;
   position: relative;
@@ -19,8 +20,8 @@
   overflow: hidden;
 }
 .topbar-sep { opacity: 0.3; }
-.topbar-link { color: var(--gold-light); transition: var(--transition-fast); }
-.topbar-link:hover { color: var(--gold); }
+.topbar-link { color: var(--gold); transition: var(--transition-fast); }
+.topbar-link:hover { color: var(--charcoal); }
 
 /* Gold Ticker */
 .gold-ticker {
@@ -30,7 +31,7 @@
   font-size: 0.75rem;
 }
 .ticker-label {
-  color: var(--gold);
+  color: var(--charcoal-mid);
   font-weight: 500;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -42,10 +43,10 @@
   gap: 5px;
 }
 .ticker-purity {
-  color: var(--gold-light);
+  color: var(--gold);
   font-weight: 600;
 }
-.ticker-price { color: #ffffff; font-weight: 600; }
+.ticker-price { color: var(--charcoal); font-weight: 600; }
 .ticker-change {
   display: flex;
   align-items: center;

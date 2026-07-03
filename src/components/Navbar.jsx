@@ -81,12 +81,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link to="/" className="navbar-logo">
             <div className="logo-emblem">
-              <svg width="32" height="32" viewBox="0 0 100 100" fill="none" stroke="#8B5A2B" strokeWidth="4">
-                <path d="M50 10 C 20 45, 15 70, 30 85 C 40 95, 60 95, 70 85 C 85 70, 80 45, 50 10 Z" fill="rgba(139, 90, 43, 0.05)" />
-                <path d="M50 40 C 45 55, 30 60, 30 60 C 40 65, 50 60, 50 60 C 50 60, 60 65, 70 60 C 70 60, 55 55, 50 40 Z" fill="rgba(139, 90, 43, 0.4)" strokeWidth="2" />
-                <path d="M50 60 L50 80" strokeWidth="3" />
-                <circle cx="50" cy="85" r="3" fill="#8B5A2B" />
-              </svg>
+              <img src="/logo.png" alt="Kriyaalaya Jewellery" style={{height: '36px', objectFit: 'contain'}} />
             </div>
             <div className="logo-text">
               <span className="logo-brand" style={{textTransform: 'uppercase', fontSize: '1.2rem', letterSpacing: '0.05em'}}>Kriyaalaya Jewellery</span>
