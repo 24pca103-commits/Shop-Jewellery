@@ -22,6 +22,14 @@ export default function CategoryGrid() {
               <div className="category-card-img-wrap">
                 <img src={cat.image} alt={cat.label} className="category-card-img" loading="lazy" />
                 <div className="category-card-overlay"></div>
+                {/* Floating bubble elements */}
+                <div className="category-bubbles">
+                  <span className="bubble b1"></span>
+                  <span className="bubble b2"></span>
+                  <span className="bubble b3"></span>
+                  <span className="bubble b4"></span>
+                  <span className="bubble b5"></span>
+                </div>
               </div>
               <div className="category-card-content">
                 <h3 className="category-card-title">{cat.label}</h3>
