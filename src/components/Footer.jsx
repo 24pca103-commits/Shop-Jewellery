@@ -59,6 +59,7 @@ export default function Footer() {
       <div className="footer-main">
         <div className="container">
           <div className="footer-grid">
+            <div className="footer-brand">
               <div className="footer-logo" style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' }}>
                 <img src="/logo.png" alt="logo" style={{ height: '58px', objectFit: 'contain', filter: 'invert(1) sepia(1) saturate(3) brightness(1.2)', mixBlendMode: 'screen', flexShrink: 0 }} />
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
