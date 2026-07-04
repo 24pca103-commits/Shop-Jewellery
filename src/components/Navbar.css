@@ -108,7 +108,6 @@
   align-items: center;
   justify-content: space-between;
   gap: var(--space-xl);
-  overflow: hidden;
 }
 
 /* Logo */
