@@ -163,15 +163,15 @@
   padding: 8px 14px;
   font-size: 0.875rem;
   font-weight: 500;
-  color: var(--charcoal-mid);
+  color: rgba(255, 255, 255, 0.9);
   border-radius: var(--radius-sm);
   transition: var(--transition-fast);
   white-space: nowrap;
 }
 
 .nav-link:hover {
-  color: var(--gold);
-  background: var(--gold-muted);
+  color: #FFD700;
+  background: rgba(255, 255, 255, 0.08);
 }
 
 /* Mega Menu */
@@ -231,7 +231,7 @@
   width: 40px;
   height: 40px;
   border-radius: var(--radius-full);
-  color: var(--charcoal-mid);
+  color: rgba(255, 255, 255, 0.9);
   transition: var(--transition-fast);
   background: transparent;
   border: none;
@@ -239,8 +239,8 @@
 }
 
 .nav-action-btn:hover {
-  background: var(--gold-muted);
-  color: var(--gold);
+  background: rgba(255, 255, 255, 0.08);
+  color: #FFD700;
 }
 
 .nav-badge {
