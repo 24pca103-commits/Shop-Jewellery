@@ -86,17 +86,17 @@
   position: sticky;
   top: 0;
   z-index: var(--z-nav);
-  background: rgba(75, 50, 8, 0.92);
+  background: rgba(55, 35, 5, 0.96);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(139, 90, 43, 0.15);
+  border-bottom: 1px solid rgba(255, 215, 0, 0.12);
   transition: var(--transition-base);
 }
 
 .navbar-scrolled {
-  background: rgba(49, 32, 2, 0.98);
+  background: rgba(35, 20, 3, 0.98);
   box-shadow: var(--shadow-nav);
-  border-bottom-color: rgba(139, 90, 43, 0.25);
+  border-bottom-color: rgba(255, 215, 0, 0.2);
 }
 
 .navbar-inner {
