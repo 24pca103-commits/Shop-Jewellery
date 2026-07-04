@@ -11,7 +11,7 @@ const SLIDES = [
     subtitle: 'Exquisite gold, diamond & bridal jewellery crafted for India\'s most precious moments.',
     cta1: { label: 'Shop Bridal', href: '/catalog/bridal' },
     cta2: { label: 'Explore Diamonds', href: '/catalog/diamond' },
-    bg: 'https://png.pngtree.com/thumb_back/fh260/background/20231229/pngtree-top-view-of-fashion-jewelry-stylish-chokers-image_13809389.png',
+    bg: 'https://t4.ftcdn.net/jpg/01/42/93/37/360_F_142933739_Q6zg4Fm2wm8ykeLTM3QEaL3UVgreTAvk.jpg',
     accent: '#8B5A2B',
     align: 'left',
   },
