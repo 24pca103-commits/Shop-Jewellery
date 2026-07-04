@@ -80,7 +80,7 @@ export default function Navbar() {
       <nav className={`navbar ${scrolled ? 'navbar-scrolled' : ''}`}>
         <div className="navbar-inner">
           <Link to="/" className="navbar-logo" style={{ padding: '4px 0', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px' }}>
-            <img src="/logo.png" alt="logo" style={{ height: '58px', objectFit: 'contain', filter: 'invert(1) sepia(1) saturate(3) brightness(1.2)', mixBlendMode: 'screen', flexShrink: 0 }} />
+            <img src="/logo.png" alt="logo" style={{ height: '58px', objectFit: 'contain', flexShrink: 0 }} />
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
               <span style={{ fontFamily: 'var(--font-serif)', fontSize: '1.35rem', fontWeight: '700', color: '#FFD700', letterSpacing: '0.08em', textTransform: 'uppercase', lineHeight: '1.1' }}>Kriyaalaya</span>
               <span style={{ fontFamily: 'var(--font-serif)', fontSize: '0.6rem', fontWeight: '500', color: '#FFE566', letterSpacing: '0.28em', textTransform: 'uppercase' }}>Jewellery</span>
