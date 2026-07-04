@@ -1,9 +1,9 @@
-.footer { background: var(--charcoal); color: rgba(255,255,255,0.75); }
+.footer { background: rgba(75, 50, 8, 0.98); color: rgba(255,255,255,0.85); }
 
 /* Trust Bar */
 .footer-trust {
-  background: linear-gradient(135deg, #222 0%, #2D1B15 100%);
-  border-bottom: 1px solid rgba(139, 90, 43,0.15);
+  background: rgba(55, 35, 5, 0.98);
+  border-bottom: 1px solid rgba(255, 215, 0, 0.2);
   padding: var(--space-xl) 0;
 }
 .trust-grid {
@@ -17,8 +17,8 @@
   gap: 10px;
 }
 .trust-icon { font-size: 1.5rem; flex-shrink: 0; }
-.trust-label { font-size: 0.8rem; font-weight: 600; color: rgba(255,255,255,0.9); }
-.trust-desc { font-size: 0.68rem; color: rgba(255,255,255,0.45); margin-top: 2px; }
+.trust-label { font-size: 0.8rem; font-weight: 600; color: #FFD700; }
+.trust-desc { font-size: 0.68rem; color: rgba(255,255,255,0.65); margin-top: 2px; }
 
 /* Main Footer */
 .footer-main { padding: var(--space-3xl) 0 var(--space-2xl); }
@@ -53,7 +53,7 @@
 .footer-about {
   font-size: 0.82rem;
   line-height: 1.7;
-  color: rgba(255,255,255,0.55);
+  color: rgba(255,255,255,0.8);
   margin-bottom: var(--space-md);
 }
 .footer-contact-items {

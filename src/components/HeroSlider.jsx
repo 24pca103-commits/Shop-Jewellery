@@ -11,7 +11,7 @@ const SLIDES = [
     subtitle: 'Exquisite gold, diamond & bridal jewellery crafted for India\'s most precious moments.',
     cta1: { label: 'Shop Bridal', href: '/catalog/bridal' },
     cta2: { label: 'Explore Diamonds', href: '/catalog/diamond' },
-    bg: 'https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=1600&q=85',
+    bg: 'https://t4.ftcdn.net/jpg/01/42/93/37/360_F_142933739_Q6zg4Fm2wm8ykeLTM3QEaL3UVgreTAvk.jpg',
     accent: '#8B5A2B',
     align: 'left',
   },
@@ -22,7 +22,7 @@ const SLIDES = [
     subtitle: 'Certified solitaires, tennis bracelets & statement pieces that define luxury.',
     cta1: { label: 'Shop Diamonds', href: '/catalog/diamond' },
     cta2: { label: 'View Collection', href: '/catalog' },
-    bg: 'https://images.unsplash.com/photo-1543294001-f7cd5d7fb516?w=1600&q=85',
+    bg: 'https://t3.ftcdn.net/jpg/04/86/76/98/360_F_486769878_2Pg9jUn3OjKI7su9E1RrU7rhLATRKj21.jpg',
     accent: '#7BA3C8',
     align: 'center',
   },
@@ -33,7 +33,7 @@ const SLIDES = [
     subtitle: 'Ancient temple art traditions woven into breathtaking gold jewellery.',
     cta1: { label: 'Shop Temple', href: '/catalog/temple' },
     cta2: { label: 'Antique Collection', href: '/catalog/antique' },
-    bg: 'https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=1600&q=85',
+    bg: 'https://bgs.in/cdn/shop/files/IMG_9763.jpg?v=1767172097&width=3456',
     accent: '#8B5A2B',
     align: 'left',
   },
@@ -44,9 +44,9 @@ const SLIDES = [
     subtitle: 'BIS hallmarked coins, bars & gifting solutions — invest in timeless gold.',
     cta1: { label: 'Shop Gold', href: '/catalog/coins' },
     cta2: { label: 'Gold Scheme', href: '/gold-scheme' },
-    bg: 'https://images.unsplash.com/photo-1535632787350-4e68ef0ac584?w=1600&q=85',
+    bg: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvKipOGxxNoEEv24RGQ24U2VDdjrBI4tYB_nK8DBU0MFlKiPrLBcJxPiQ&s=10',
     accent: '#8B5A2B',
-    align: 'right',
+    align: 'center',
   },
 ];
 
@@ -131,7 +131,7 @@ export default function HeroSlider() {
       {/* Dots */}
       <div className="hero-dots">
         {SLIDES.map((_, i) => (
-          <button key={i} className={`hero-dot ${i === current ? 'active' : ''}`} onClick={() => go(i)} aria-label={`Slide ${i+1}`} />
+          <button key={i} className={`hero-dot ${i === current ? 'active' : ''}`} onClick={() => go(i)} aria-label={`Slide ${i + 1}`} />
         ))}
       </div>
 

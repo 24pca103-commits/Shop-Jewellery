@@ -57,7 +57,7 @@ export const CartProvider = ({ children }) => {
   const clearCart = useCallback(() => dispatch({ type: 'CLEAR' }), []);
 
   const total = state.items.reduce((sum, i) => sum + (i.price * Number(i.qty)), 0);
-  const count = state.items.reduce((sum, i) => sum + Number(i.qty), 0);
+  const count = state.items.length;
 
   return (
     <CartContext.Provider value={{ items: state.items, total, count, addToCart, removeFromCart, updateQty, clearCart }}>
