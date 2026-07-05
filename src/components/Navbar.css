@@ -120,7 +120,6 @@
 }
 
 .navbar-logo img {
-  filter: brightness(0) saturate(100%) invert(72%) sepia(90%) saturate(650%) hue-rotate(355deg) brightness(105%) contrast(105%);
   image-rendering: -webkit-optimize-contrast;
   image-rendering: crisp-edges;
 }

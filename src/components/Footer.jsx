@@ -60,28 +60,26 @@ export default function Footer() {
         <div className="container">
           <div className="footer-grid">
             <div className="footer-brand">
-              <div className="footer-logo" style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '4px', marginBottom: '16px' }}>
-                <img src="/logo.png" alt="logo" style={{ height: '70px', objectFit: 'contain', flexShrink: 0 }} />
-                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', lineHeight: '1' }}>
-                  <span style={{ fontFamily: 'var(--font-serif)', fontSize: '1.4rem', fontWeight: '900', color: '#FFD700', letterSpacing: '0.15em', textTransform: 'uppercase', textShadow: '0 1px 2px rgba(0,0,0,0.2)' }}>Thodoo</span>
-                  <span style={{ fontFamily: 'var(--font-serif)', fontSize: '0.65rem', fontWeight: '800', color: '#FFE566', letterSpacing: '0.3em', textTransform: 'uppercase', marginTop: '2px', textShadow: '0 1px 2px rgba(0,0,0,0.2)' }}>Jewellery</span>
-                </div>
+              <div className="footer-logo" style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
+                <img src="/logo.png" alt="logo" style={{ height: '60px', objectFit: 'contain', flexShrink: 0 }} />
+                <div style={{ height: '24px', width: '1px', background: 'rgba(255, 215, 0, 0.3)' }}></div>
+                <span style={{ fontFamily: 'var(--font-serif)', fontSize: '0.8rem', fontWeight: '800', color: '#FFE566', letterSpacing: '0.3em', textTransform: 'uppercase', textShadow: '0 1px 2px rgba(0,0,0,0.2)' }}>Jewellery</span>
               </div>
               <p className="footer-about">
                 India's most trusted premium jewellery brand, crafting exquisite gold, diamond,
                 and bridal jewellery since 1975. Over 5 lakh happy customers across India.
               </p>
               <div className="footer-contact-items">
-                <a href="tel:+919876543210" className="footer-contact-item">
-                  <Phone size={14} /> +91 98765 43210
+                <a href="tel:+919385411051" className="footer-contact-item">
+                  <Phone size={14} /> +91 93854 11051
                 </a>
-                <a href="mailto:support@thodoo.com" className="footer-contact-item">
-                  <Mail size={14} /> support@thodoo.com
+                <a href="mailto:thodoo.co@gmail.com" className="footer-contact-item">
+                  <Mail size={14} /> thodoo.co@gmail.com
                 </a>
                 <span className="footer-contact-item" style={{ alignItems: 'flex-start' }}>
                   <MapPin size={14} style={{ marginTop: '4px', flexShrink: 0 }} />
                   <span style={{ lineHeight: 1.4 }}>
-                    102, Gold Palace Boulevard, Sector 4,<br />HSR Layout, Bengaluru, Karnataka 560102
+                    No.5, Jaya Complex, Thadagam Main Rd,<br />PMR Nagar, TVS Nagar, Coimbatore, Tamil Nadu 641025
                   </span>
                 </span>
               </div>

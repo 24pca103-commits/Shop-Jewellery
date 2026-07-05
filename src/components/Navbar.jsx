@@ -55,10 +55,7 @@ export default function Navbar() {
         <div className="navbar-topbar-inner">
           <div className="flex items-center gap-md">
             <Phone size={12} />
-            <span>+91 98765 43210</span>
-            <span className="topbar-sep">|</span>
-            <MapPin size={12} />
-            <span className="topbar-link" style={{ cursor: 'default' }}>Bengaluru, KA</span>
+            <span>+91 93854 11051</span>
           </div>
           <div className="gold-ticker">
             <span className="ticker-label">Live Gold Rate:</span>
@@ -79,12 +76,10 @@ export default function Navbar() {
       {/* Main Nav */}
       <nav className={`navbar ${scrolled ? 'navbar-scrolled' : ''}`}>
         <div className="navbar-inner">
-          <Link to="/" className="navbar-logo" style={{ padding: '2px 0', textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
+          <Link to="/" className="navbar-logo" style={{ padding: '2px 0', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '12px' }}>
             <img src="/logo.png" alt="Thodoo" style={{ height: '54px', objectFit: 'contain', flexShrink: 0 }} />
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', lineHeight: '1' }}>
-              <span style={{ fontFamily: 'var(--font-serif)', fontSize: '1.4rem', fontWeight: '900', color: '#FFD700', letterSpacing: '0.15em', textTransform: 'uppercase', textShadow: '0 1px 2px rgba(0,0,0,0.2)' }}>Thodoo</span>
-              <span style={{ fontFamily: 'var(--font-serif)', fontSize: '0.65rem', fontWeight: '800', color: '#FFE566', letterSpacing: '0.3em', textTransform: 'uppercase', marginTop: '2px', textShadow: '0 1px 2px rgba(0,0,0,0.2)' }}>Jewellery</span>
-            </div>
+            <div style={{ height: '24px', width: '1px', background: 'rgba(255, 215, 0, 0.3)' }}></div>
+            <span style={{ fontFamily: 'var(--font-serif)', fontSize: '0.8rem', fontWeight: '800', color: '#FFE566', letterSpacing: '0.3em', textTransform: 'uppercase', textShadow: '0 1px 2px rgba(0,0,0,0.2)' }}>Jewellery</span>
           </Link>
 
           {/* Desktop Nav Links */}
