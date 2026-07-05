@@ -147,8 +147,12 @@
 }
 
 .navbar-logo img {
+  height: 52px;
+  width: auto;
+  object-fit: contain;
   image-rendering: -webkit-optimize-contrast;
   image-rendering: crisp-edges;
+  transition: height 0.3s ease;
 }
 
 .logo-emblem {
@@ -318,8 +322,8 @@
 }
 
 .nav-mobile-toggle:hover {
-  background: var(--gold-muted);
-  color: var(--gold);
+  background: rgba(255, 255, 255, 0.08);
+  color: #FFD700;
 }
 
 /* Search Overlay */
@@ -569,9 +573,8 @@
     font-size: 1.15rem;
   }
 
-  .navbar-logo-img {
-    height: 120px;
-    left: -70px;
+  .navbar-logo img {
+    height: 40px;
   }
 }
 
@@ -602,13 +605,8 @@
     display: none;
   }
 
-  .navbar-logo {
-    width: 110px;
-  }
-
-  .navbar-logo-img {
-    height: 100px;
-    left: -30px;
+  .navbar-logo img {
+    height: 34px;
   }
 }
 

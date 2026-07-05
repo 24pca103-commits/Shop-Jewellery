@@ -54,28 +54,20 @@
 .footer-logo {
   display: flex;
   align-items: center;
+  gap: 12px;
   margin-bottom: var(--space-md);
-  position: relative;
-  width: 140px;
-  height: 50px;
 }
 
-.footer-logo-img {
-  position: absolute;
-  top: 50%;
-  left: -100px;
-  transform: translateY(-50%);
-  height: 160px;
+.footer-logo img {
+  height: 60px;
   width: auto;
-  max-height: none;
-  max-width: none;
   object-fit: contain;
   transition: height var(--transition-base);
   filter: none !important;
 }
 
 @media (max-width: 768px) {
-  .footer-logo-img {
+  .footer-logo img {
     height: 48px;
   }
 }
@@ -388,14 +380,7 @@
     padding: var(--space-lg) 0;
   }
 
-  .footer-logo {
-    width: 110px;
-  }
 
-  .footer-logo-img {
-    height: 110px;
-    left: -65px;
-  }
 
   .footer-newsletter {
     flex-direction: row;

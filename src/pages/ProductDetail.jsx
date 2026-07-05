@@ -50,7 +50,21 @@ export default function ProductDetail() {
     const { left, top, width, height } = e.currentTarget.getBoundingClientRect();
     const x = ((e.clientX - left) / width) * 100;
     const y = ((e.clientY - top) / height) * 100;
-    setZoomPos({ x, y, show: true });
+    setZoomPos({ x, y, show: true, isTouch: false });
+  };
+
+  const handleTouchStart = (e) => {
+    const touch = e.touches[0];
+    if (!touch) return;
+    const { left, top, width, height } = e.currentTarget.getBoundingClientRect();
+    const x = ((touch.clientX - left) / width) * 100;
+    const y = ((touch.clientY - top) / height) * 100;
+    setZoomPos(prev => ({
+      x,
+      y,
+      show: !prev.show,
+      isTouch: true
+    }));
   };
 
   const handleTouchMove = (e) => {
@@ -59,11 +73,14 @@ export default function ProductDetail() {
     const { left, top, width, height } = e.currentTarget.getBoundingClientRect();
     const x = ((touch.clientX - left) / width) * 100;
     const y = ((touch.clientY - top) / height) * 100;
-    setZoomPos({ x, y, show: true });
+    setZoomPos(prev => {
+      if (!prev.show) return prev;
+      return { ...prev, x, y };
+    });
   };
 
   const handleMouseLeave = () => {
-    setZoomPos({ x: 50, y: 50, show: false });
+    setZoomPos({ x: 50, y: 50, show: false, isTouch: false });
   };
 
   const handleCart = () => {
@@ -92,9 +109,8 @@ export default function ProductDetail() {
             <div className="gallery-main"
               onMouseMove={handleMouseMove}
               onMouseLeave={handleMouseLeave}
+              onTouchStart={handleTouchStart}
               onTouchMove={handleTouchMove}
-              onTouchStart={handleTouchMove}
-              onTouchEnd={handleMouseLeave}
               style={{ cursor: 'zoom-in', overflow: 'hidden', touchAction: 'none' }}
             >
               {activeImg === 'video' && product.video ? (
@@ -105,7 +121,7 @@ export default function ProductDetail() {
                   alt={product.name} 
                   className="gallery-main-img" 
                   style={{ 
-                    transform: zoomPos.show ? 'scale(2.5)' : 'scale(1)',
+                    transform: zoomPos.show ? 'scale(3.5)' : 'scale(1)',
                     transformOrigin: `${zoomPos.x}% ${zoomPos.y}%`,
                     transition: zoomPos.show ? 'none' : 'transform 0.3s ease, transform-origin 0.3s ease'
                   }} 
