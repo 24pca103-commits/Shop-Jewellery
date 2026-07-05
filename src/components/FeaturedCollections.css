@@ -51,39 +51,74 @@
 
 .collection-card {
   position: relative;
-  flex: 0 0 300px;
-  height: 420px;
   border-radius: var(--radius-lg);
   overflow: hidden;
-  scroll-snap-align: start;
+  aspect-ratio: 4/5;
   cursor: pointer;
-  animation: fadeIn 0.5s ease both;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+  background: var(--cream);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+  flex: 0 0 300px;
+  scroll-snap-align: start;
   text-decoration: none;
 }
 
-/* Delicate inner gold border frame that draws in on hover */
+/* Explosion Shockwave */
 .collection-card::before {
   content: '';
   position: absolute;
-  inset: 16px;
-  border: 1.5px solid var(--gold);
-  border-radius: calc(var(--radius-lg) - 8px);
-  z-index: 2;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.6) 0%, rgba(255, 215, 0, 0) 80%);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
   opacity: 0;
-  transform: scale(0.96);
-  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 4;
   pointer-events: none;
+}
+
+/* Flash Effect */
+.collection-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: #FFFFFF;
+  opacity: 0;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.collection-card:hover::before {
+  animation: shockwave 0.7s cubic-bezier(0.1, 0.8, 0.2, 1) forwards;
+}
+
+.collection-card:hover::after {
+  animation: flash 0.5s ease-out forwards;
+}
+
+@keyframes shockwave {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    width: 300%;
+    height: 300%;
+    opacity: 0;
+  }
+}
+
+@keyframes flash {
+  0% { opacity: 0.5; }
+  100% { opacity: 0; }
 }
 
 .collection-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(139, 90, 43, 0.18);
-}
-
-.collection-card:hover::before {
-  opacity: 1;
-  transform: scale(1);
+  box-shadow: 0 20px 40px rgba(139, 90, 43, 0.2);
 }
 
 .collection-card:active {
@@ -99,34 +134,41 @@
 }
 
 .collection-img {
-  width: 112%; /* extra width for horizontal pan */
+  width: 100%;
   height: 100%;
   object-fit: cover;
-  transform: translateX(-6%);
-  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s ease;
-  filter: grayscale(40%) brightness(0.85);
+  transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  filter: brightness(0.85);
 }
 
 .collection-card:hover .collection-img {
-  transform: translateX(0);
-  filter: grayscale(0%) brightness(1.05);
+  transform: scale(1.15);
+  filter: brightness(1.1);
 }
 
 .collection-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(to top,
-      rgba(75, 50, 8, 0.8) 0%,
-      rgba(0, 0, 0, 0.3) 50%,
+      rgba(0, 0, 0, 0.8) 0%,
+      rgba(0, 0, 0, 0.4) 50%,
       rgba(0, 0, 0, 0.1) 100%);
-  transition: background 0.5s ease;
 }
 
-.collection-card:hover .collection-overlay {
+.collection-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
   background: linear-gradient(to top,
-      rgba(75, 50, 8, 0.9) 0%,
-      rgba(139, 90, 43, 0.4) 60%,
-      rgba(0, 0, 0, 0.2) 100%);
+      rgba(52, 24, 10, 0.95) 0%,
+      rgba(139, 90, 43, 0.7) 60%,
+      rgba(0, 0, 0, 0.3) 100%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.collection-card:hover .collection-overlay::after {
+  opacity: 1;
 }
 
 .collection-content {
@@ -137,36 +179,21 @@
   padding: 30px 24px;
   color: var(--white);
   z-index: 3;
+  transform: translateY(0);
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.collection-card:hover .collection-content {
+  transform: translateY(-5px);
 }
 
 .collection-name {
   font-family: var(--font-serif);
-  font-size: 1.3rem;
+  font-size: 1.35rem;
   font-weight: 600;
-  margin-bottom: 4px;
-  transform: translateY(12px);
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.collection-card:hover .collection-name {
-  transform: translateY(0);
-}
-
-.collection-desc {
-  font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.8);
-  line-height: 1.5;
-  margin-bottom: 0;
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.collection-card:hover .collection-desc {
-  max-height: 60px;
-  opacity: 1;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
+  color: #FFFFFF;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 .collection-cta {
@@ -177,19 +204,31 @@
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--gold-light);
-  border-bottom: 1.5px solid rgba(255, 215, 0, 0.3);
-  padding-bottom: 2px;
-  opacity: 0;
-  transform: translateY(8px);
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.1s;
+  color: #FFFFFF;
+  border-bottom: 1.5px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 4px;
+  opacity: 1;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+.collection-cta::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 1.5px;
+  background: #FFFFFF;
+  transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .collection-card:hover .collection-cta {
-  opacity: 1;
-  transform: translateY(0);
-  color: var(--gold);
-  border-color: var(--gold);
+  color: #FFFFFF;
+}
+
+.collection-card:hover .collection-cta::after {
+  width: 100%;
 }
 
 @media (max-width: 768px) {

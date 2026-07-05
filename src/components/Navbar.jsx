@@ -5,7 +5,7 @@ import { useCart } from '../context/CartContext';
 import { useWishlist } from '../context/WishlistContext';
 import { useApp } from '../context/AppContext';
 import { GOLD_RATE } from '../data/products';
-import { CATEGORIES } from '../data/categories';
+import { CATEGORIES, COLLECTIONS } from '../data/categories';
 import logoImg from '../assets/image.png';
 import './Navbar.css';
 
@@ -76,10 +76,8 @@ export default function Navbar() {
       {/* Main Nav */}
       <nav className={`navbar ${scrolled ? 'navbar-scrolled' : ''}`}>
         <div className="navbar-inner">
-          <Link to="/" className="navbar-logo" style={{ padding: '2px 0', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '12px' }}>
-            <img src="/logo.png" alt="Thodoo" style={{ height: '54px', objectFit: 'contain', flexShrink: 0 }} />
-            <div style={{ height: '24px', width: '1px', background: 'rgba(255, 215, 0, 0.3)' }}></div>
-            <span style={{ fontFamily: 'var(--font-serif)', fontSize: '0.8rem', fontWeight: '800', color: '#FFE566', letterSpacing: '0.3em', textTransform: 'uppercase', textShadow: '0 1px 2px rgba(0,0,0,0.2)' }}>Jewellery</span>
+          <Link to="/" className="navbar-logo" style={{ padding: '2px 0', textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
+            <img src="/logo-transparent.png" alt="Thodoo" className="navbar-logo-img" />
           </Link>
 
           {/* Desktop Nav Links */}
@@ -92,14 +90,30 @@ export default function Navbar() {
                   {link.label}
                 </Link>
                 {link.hasDropdown && activeDropdown === link.label && (
-                  <div className="nav-megamenu">
-                    <div className="megamenu-grid">
-                      {CATEGORIES.slice(0, 12).map(cat => (
-                        <Link key={cat.id} to={`/catalog/${cat.id}`} className="megamenu-item" onClick={() => setActiveDropdown(null)}>
-                          <img src={cat.image} alt={cat.label} className="megamenu-img" />
-                          <span>{cat.label}</span>
-                        </Link>
-                      ))}
+                  <div className="nav-megamenu" style={{ width: '560px', left: '50%', transform: 'translateX(-50%)' }}>
+                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
+                      <div>
+                        <h4 style={{ fontSize: '0.8rem', fontWeight: 'bold', textTransform: 'uppercase', color: 'var(--gold-dark)', marginBottom: '8px', paddingLeft: '8px', borderLeft: '2px solid var(--gold)' }}>Categories</h4>
+                        <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '2px' }}>
+                          {CATEGORIES.slice(0, 9).map(cat => (
+                            <Link key={cat.id} to={`/catalog/${cat.id}`} className="megamenu-item" onClick={() => setActiveDropdown(null)}>
+                              <img src={cat.image} alt={cat.label} className="megamenu-img" />
+                              <span>{cat.label}</span>
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                      <div>
+                        <h4 style={{ fontSize: '0.8rem', fontWeight: 'bold', textTransform: 'uppercase', color: 'var(--gold-dark)', marginBottom: '8px', paddingLeft: '8px', borderLeft: '2px solid var(--gold)' }}>Collections</h4>
+                        <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '2px' }}>
+                          {COLLECTIONS.map(col => (
+                            <Link key={col.id} to={`/catalog/${col.id}`} className="megamenu-item" onClick={() => setActiveDropdown(null)}>
+                              <img src={col.image} alt={col.label} className="megamenu-img" />
+                              <span>{col.label}</span>
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
                     </div>
                   </div>
                 )}
@@ -179,13 +193,26 @@ export default function Navbar() {
             </Link>
           ))}
           <div className="mobile-divider" />
-          <div className="mobile-categories">
-            {CATEGORIES.slice(0, 8).map(cat => (
-              <Link key={cat.id} to={`/catalog/${cat.id}`} className="mobile-cat-link" style={{ display: 'flex', alignItems: 'center', gap: '8px' }} onClick={() => setMobileOpen(false)}>
-                <img src={cat.image} alt={cat.label} style={{ width: '22px', height: '22px', borderRadius: '50%', objectFit: 'cover' }} />
-                <span>{cat.label}</span>
-              </Link>
-            ))}
+          <div className="mobile-categories" style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+            <h4 style={{ fontSize: '0.8rem', fontWeight: 'bold', textTransform: 'uppercase', color: 'var(--gold-dark)', margin: '8px 0 4px 4px' }}>Categories</h4>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4px' }}>
+              {CATEGORIES.slice(0, 8).map(cat => (
+                <Link key={cat.id} to={`/catalog/${cat.id}`} className="mobile-cat-link" style={{ display: 'flex', alignItems: 'center', gap: '6px' }} onClick={() => setMobileOpen(false)}>
+                  <img src={cat.image} alt={cat.label} style={{ width: '22px', height: '22px', borderRadius: '50%', objectFit: 'cover' }} />
+                  <span>{cat.label}</span>
+                </Link>
+              ))}
+            </div>
+            <div className="mobile-divider" style={{ margin: '4px 0' }} />
+            <h4 style={{ fontSize: '0.8rem', fontWeight: 'bold', textTransform: 'uppercase', color: 'var(--gold-dark)', margin: '4px 0 4px 4px' }}>Collections</h4>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4px' }}>
+              {COLLECTIONS.map(col => (
+                <Link key={col.id} to={`/catalog/${col.id}`} className="mobile-cat-link" style={{ display: 'flex', alignItems: 'center', gap: '6px' }} onClick={() => setMobileOpen(false)}>
+                  <img src={col.image} alt={col.label} style={{ width: '22px', height: '22px', borderRadius: '50%', objectFit: 'cover' }} />
+                  <span>{col.label}</span>
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </div>

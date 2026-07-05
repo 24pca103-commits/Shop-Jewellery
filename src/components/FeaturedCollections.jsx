@@ -37,7 +37,6 @@ export default function FeaturedCollections() {
               </div>
               <div className="collection-content">
                 <h3 className="collection-name">{col.label}</h3>
-                <p className="collection-desc">{col.description}</p>
                 <span className="collection-cta">
                   Explore <ArrowRight size={14} />
                 </span>

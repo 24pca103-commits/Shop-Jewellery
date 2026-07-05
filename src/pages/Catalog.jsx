@@ -1,10 +1,10 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { useParams, useSearchParams, Link } from 'react-router-dom';
 import { SlidersHorizontal, X, Grid2X2, List, ChevronDown } from 'lucide-react';
 import ProductCard from '../components/ProductCard';
 import QuickViewModal from '../components/QuickViewModal';
 import { PRODUCTS } from '../data/products';
-import { CATEGORIES } from '../data/categories';
+import { CATEGORIES, COLLECTIONS } from '../data/categories';
 import './Catalog.css';
 
 const SORT_OPTIONS = [
@@ -34,6 +34,10 @@ export default function Catalog() {
   const [quickView, setQuickView] = useState(null);
   const [filters, setFilters] = useState({ metals: [], occasions: [], priceRange: null, purity: [], stones: [] });
 
+  useEffect(() => {
+    setFilters({ metals: [], occasions: [], priceRange: null, purity: [], stones: [] });
+  }, [category]);
+
   const toggleFilter = (key, val) => {
     setFilters(prev => {
       const arr = prev[key];
@@ -45,12 +49,27 @@ export default function Catalog() {
     let p = [...PRODUCTS];
     if (category) {
       const lowerCat = category.toLowerCase();
-      p = p.filter(x => 
-        (x.category && x.category.toLowerCase() === lowerCat) || 
-        (x.collection && x.collection.toLowerCase() === lowerCat) || 
-        (x.metal && x.metal.toLowerCase() === lowerCat) ||
-        (x.stone && x.stone.toLowerCase() === lowerCat)
-      );
+      const targetCat = lowerCat === 'wedding' ? 'bridal' : lowerCat;
+      
+      const isKnownCollection = COLLECTIONS.some(c => c.id === targetCat);
+      const isKnownCategory = CATEGORIES.some(c => c.id === targetCat);
+      
+      if (isKnownCollection) {
+        if (targetCat === 'featured') {
+          p = p.filter(x => x.featured === true || (x.collection && x.collection.toLowerCase() === 'featured'));
+        } else {
+          p = p.filter(x => x.collection && x.collection.toLowerCase() === targetCat);
+        }
+      } else if (isKnownCategory) {
+        p = p.filter(x => x.category && x.category.toLowerCase() === targetCat);
+      } else {
+        p = p.filter(x => 
+          (x.category && x.category.toLowerCase() === targetCat) || 
+          (x.collection && x.collection.toLowerCase() === targetCat) || 
+          (x.metal && x.metal.toLowerCase() === targetCat) ||
+          (x.stone && x.stone.toLowerCase() === targetCat)
+        );
+      }
     }
     if (searchQ) p = p.filter(x => x.name.toLowerCase().includes(searchQ.toLowerCase()) || x.category.includes(searchQ.toLowerCase()));
     if (filters.metals.length) p = p.filter(x => filters.metals.includes(x.metal));
@@ -66,8 +85,9 @@ export default function Catalog() {
     }
   }, [category, searchQ, filters, sort]);
 
-  const catInfo = CATEGORIES.find(c => c.id === category);
-  const pageTitle = catInfo?.label || (searchQ ? `Results for "${searchQ}"` : 'All Jewellery');
+  const targetCat = category?.toLowerCase() === 'wedding' ? 'bridal' : category?.toLowerCase();
+  const catInfo = COLLECTIONS.find(c => c.id === targetCat) || CATEGORIES.find(c => c.id === targetCat);
+  const pageTitle = catInfo?.label || (searchQ ? `Results for "${searchQ}"` : 'Collections');
 
   const filterSection = (title, key, options) => (
     <div className="filter-group">
@@ -91,15 +111,21 @@ export default function Catalog() {
   return (
     <div className="catalog-page page-enter">
       {/* Header */}
-      <div className="catalog-header">
+      <div className="catalog-header" style={{
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(${catInfo?.image || 'https://i.pinimg.com/564x/14/b0/1f/14b01f22b8e37b4ac4481def661e9f28.jpg'})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        position: 'relative'
+      }}>
         <div className="container">
           <div className="catalog-breadcrumb">
             <Link to="/">Home</Link> <span>/</span>
-            {category && <><Link to="/catalog">All Jewellery</Link> <span>/</span></>}
+            {category && <><Link to="/catalog">Collections</Link> <span>/</span></>}
             <span>{pageTitle}</span>
           </div>
           <h1 className="catalog-title">{pageTitle}</h1>
-          {catInfo && <p className="catalog-subtitle">{catInfo.description} — {catInfo.count} designs available</p>}
+          {catInfo && <p className="catalog-subtitle">{catInfo.description} — {products.length} designs available</p>}
         </div>
       </div>
 

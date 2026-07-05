@@ -1,10 +1,10 @@
 /* ---- Navbar Styles ---- */
 .navbar-topbar {
-  background: rgba(75, 50, 8, 0.98);
+  background: #34180a;
   color: rgba(255, 255, 255, 0.8);
-  border-bottom: 1px solid rgb(58, 50, 5);
-  font-size: 0.78rem;
-  padding: 7px 0;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.35);
+  font-size: 0.85rem;
+  padding: 8px 0;
   position: relative;
   z-index: 101;
   overflow: hidden;
@@ -86,24 +86,24 @@
   position: sticky;
   top: 0;
   z-index: var(--z-nav);
-  background: rgb(63, 36, 1);
+  background: #34180a;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(255, 215, 0, 0.12);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.35);
   transition: var(--transition-base);
 }
 
 .navbar-scrolled {
-  background: rgba(75, 50, 8, 0.98);
+  background: #34180a;
   box-shadow: var(--shadow-nav);
-  border-bottom-color: rgba(255, 215, 0, 0.2);
+  border-bottom-color: rgba(212, 175, 55, 0.55);
 }
 
 .navbar-inner {
   max-width: 1380px;
   margin: 0 auto;
   padding: 0 var(--space-xl);
-  height: 68px;
+  height: 85px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -114,9 +114,36 @@
 .navbar-logo {
   display: flex;
   align-items: center;
-  gap: 10px;
   text-decoration: none;
   flex-shrink: 0;
+  position: relative;
+  width: 140px;
+  height: 85px;
+}
+
+.navbar-logo-img {
+  position: absolute;
+  top: 50%;
+  left: -70px;
+  transform: translateY(-50%);
+  height: 150px;
+  width: auto;
+  max-height: none;
+  max-width: none;
+  object-fit: contain;
+  transition: height var(--transition-base);
+}
+
+@media (max-width: 768px) {
+  .navbar-logo-img {
+    height: 44px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-logo-img {
+    height: 38px;
+  }
 }
 
 .navbar-logo img {
@@ -165,9 +192,11 @@
 .nav-link {
   display: block;
   padding: 8px 14px;
-  font-size: 0.875rem;
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: 0.02em;
+  color: rgba(255, 255, 255, 0.95);
   border-radius: var(--radius-sm);
   transition: var(--transition-fast);
   white-space: nowrap;

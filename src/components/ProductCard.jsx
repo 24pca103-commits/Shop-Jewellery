@@ -102,7 +102,6 @@ export default function ProductCard({ product, onQuickView }) {
 
         <div className="product-price-row">
           <span className="product-price">₹{product.price.toLocaleString('en-IN')}</span>
-          {product.emi && <span className="product-emi-badge">EMI</span>}
         </div>
 
         <div className="product-details-sub">

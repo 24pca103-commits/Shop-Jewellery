@@ -167,7 +167,29 @@
 }
 @media (max-width: 360px) {
   .product-title { font-size: 1.2rem; }
-  .trust-badges { gap: 8px; }
+}
+
+.size-btn {
+  padding: 8px 16px;
+  background: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: var(--radius-sm);
+  color: var(--charcoal);
+  font-weight: 500;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.size-btn:hover {
+  border-color: var(--gold);
+}
+
+.size-btn.active {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(139, 90, 43, 0.2);
 }
 
 

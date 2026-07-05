@@ -5,15 +5,25 @@ import { useCart } from '../context/CartContext';
 import { useWishlist } from '../context/WishlistContext';
 import { useApp } from '../context/AppContext';
 import { PRODUCTS } from '../data/products';
+import { CATEGORIES, COLLECTIONS } from '../data/categories';
 import './ProductDetail.css';
 
 export default function ProductDetail() {
   const { id } = useParams();
   const product = PRODUCTS.find(p => p.id === parseInt(id));
+  const collectionData = product ? COLLECTIONS.find(c => c.id === product.collection) : null;
+  const categoryData = product ? CATEGORIES.find(c => c.id === product.category) : null;
+  const breadcrumbPath = collectionData ? `/catalog/${product.collection}` : `/catalog/${product.category}`;
+  const breadcrumbLabel = collectionData ? collectionData.label : (categoryData ? categoryData.label : product.category);
+
   const [activeImg, setActiveImg] = useState(0);
   const { addToCart } = useCart();
   const { toggleWishlist, isWishlisted } = useWishlist();
   const { addToast } = useApp();
+  const [zoomPos, setZoomPos] = useState({ x: 50, y: 50, show: false });
+  const [selectedSize, setSelectedSize] = useState('14');
+  const [selectedSizeMen, setSelectedSizeMen] = useState('18');
+  const [selectedSizeWomen, setSelectedSizeWomen] = useState('12');
 
   if (!product) {
     return <div className="container" style={{padding: '100px 0', textAlign: 'center'}}>Product not found</div>;
@@ -22,7 +32,19 @@ export default function ProductDetail() {
   const wished = isWishlisted(product.id);
   const images = product.images || [product.image];
 
-  const [zoomPos, setZoomPos] = useState({ x: 50, y: 50, show: false });
+  const handleShare = (e) => {
+    e.preventDefault();
+    if (navigator.share) {
+      navigator.share({
+        title: product.name,
+        text: `Check out this beautiful ${product.name} at Thodoo!`,
+        url: window.location.href,
+      }).catch((err) => console.log(err));
+    } else {
+      navigator.clipboard.writeText(window.location.href);
+      addToast('Product link copied to clipboard! 🔗', 'success');
+    }
+  };
 
   const handleMouseMove = (e) => {
     const { left, top, width, height } = e.currentTarget.getBoundingClientRect();
@@ -50,8 +72,8 @@ export default function ProductDetail() {
       <div className="container">
         <div className="product-breadcrumb">
           <Link to="/">Home</Link> <span>/</span>
-          <Link to="/catalog">Jewellery</Link> <span>/</span>
-          <Link to={`/catalog/${product.category}`}>{product.category}</Link> <span>/</span>
+          <Link to="/catalog">Collections</Link> <span>/</span>
+          <Link to={breadcrumbPath}>{breadcrumbLabel}</Link> <span>/</span>
           <span className="current">{product.name}</span>
         </div>
 
@@ -116,6 +138,67 @@ export default function ProductDetail() {
               <span className="tax-info">Inclusive of all taxes</span>
             </div>
 
+            <div className="product-description" style={{ fontSize: '0.9rem', color: 'var(--charcoal-mid)', margin: '16px 0', lineHeight: 1.6 }}>
+              {product.description || "A beautifully crafted piece of jewellery designed to elevate your style. Perfect for special occasions and everyday elegance."}
+            </div>
+
+            {(['rings', 'chains', 'bangles', 'bracelets', 'kada'].includes(product.category.toLowerCase()) || product.name.toLowerCase().includes('band') || product.name.toLowerCase().includes('ring')) && (
+              <div className="size-selector">
+                {product.name.toLowerCase().includes('couple') ? (
+                  <>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}>
+                      <span style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--charcoal)' }}>Select Men's Size</span>
+                      <span style={{ fontSize: '0.8rem', color: 'var(--gold)', cursor: 'pointer', textDecoration: 'underline' }}>Size Guide</span>
+                    </div>
+                    <div className="size-options" style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', marginBottom: '20px' }}>
+                      {['16', '18', '20', '22'].map(size => (
+                        <button 
+                          key={`men-${size}`}
+                          className={`size-btn ${selectedSizeMen === size ? 'active' : ''}`}
+                          onClick={() => setSelectedSizeMen(size)}
+                        >
+                          {size}
+                        </button>
+                      ))}
+                    </div>
+
+                    <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}>
+                      <span style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--charcoal)' }}>Select Women's Size</span>
+                    </div>
+                    <div className="size-options" style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', marginBottom: '20px' }}>
+                      {['10', '12', '14', '16'].map(size => (
+                        <button 
+                          key={`women-${size}`}
+                          className={`size-btn ${selectedSizeWomen === size ? 'active' : ''}`}
+                          onClick={() => setSelectedSizeWomen(size)}
+                        >
+                          {size}
+                        </button>
+                      ))}
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}>
+                      <span style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--charcoal)' }}>Select Size</span>
+                      <span style={{ fontSize: '0.8rem', color: 'var(--gold)', cursor: 'pointer', textDecoration: 'underline' }}>Size Guide</span>
+                    </div>
+                    <div className="size-options" style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', marginBottom: '20px' }}>
+                      {['10', '12', '14', '16'].map(size => (
+                        <button 
+                          key={size}
+                          className={`size-btn ${selectedSize === size ? 'active' : ''}`}
+                          onClick={() => setSelectedSize(size)}
+                        >
+                          {size}
+                        </button>
+                      ))}
+                    </div>
+                  </>
+                )}
+              </div>
+            )}
+
             <div className="action-buttons">
               <button className="btn btn-gold btn-lg flex-1" onClick={handleCart}>
                 <ShoppingBag size={20} /> Add to Cart
@@ -123,7 +206,7 @@ export default function ProductDetail() {
               <button className={`btn btn-lg btn-icon ${wished ? 'btn-outline' : 'btn-ghost'}`} onClick={handleWish} style={{ width: '54px', height: '54px', padding: '0', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', color: wished ? 'var(--gold)' : 'var(--charcoal-mid)', borderColor: wished ? 'var(--gold)' : 'rgba(0,0,0,0.1)' }} title="Add to Wishlist">
                 <Heart size={20} fill={wished ? 'var(--gold)' : 'none'} />
               </button>
-              <button className="btn btn-lg btn-icon btn-ghost" style={{ width: '54px', height: '54px', padding: '0', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', color: 'var(--charcoal-mid)', borderColor: 'rgba(0,0,0,0.1)' }} title="Share">
+              <button className="btn btn-lg btn-icon btn-ghost" onClick={handleShare} style={{ width: '54px', height: '54px', padding: '0', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', color: 'var(--charcoal-mid)', borderColor: 'rgba(0,0,0,0.1)' }} title="Share">
                 <Share2 size={20} />
               </button>
             </div>
@@ -184,17 +267,6 @@ export default function ProductDetail() {
                 )}
               </div>
             </div>
-
-            {/* EMI Banner */}
-            {product.emi && (
-              <div className="emi-banner">
-                <div className="emi-icon"><Zap size={20} color="var(--gold-dark)" /></div>
-                <div className="emi-info">
-                  <h4>EMI Options Available</h4>
-                  <p>Starting from ₹{(product.price / 12).toFixed(0).toLocaleString('en-IN')}/month. View options at checkout.</p>
-                </div>
-              </div>
-            )}
           </div>
         </div>
       </div>

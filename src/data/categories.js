@@ -8,18 +8,19 @@ export const CATEGORIES = [
   { id: 'chains', label: 'Chains', emoji: '🔗', image: 'https://rudrakshartjewellery.in/cdn/shop/products/IMG_1239_2800x.jpg?v=1754640443', description: 'Singapore, rope & box chains', count: 156 },
   { id: 'mangalsutra', label: 'Mangalsutra', emoji: '✨', image: 'https://m.media-amazon.com/images/I/61dIJjaZHoL._AC_UY300_.jpg', description: 'Traditional & modern styles', count: 89 },
   { id: 'nosepins', label: 'Nose Pin', emoji: '👃', image: 'https://shop.southindiajewels.com/wp-content/uploads/2022/06/Taditional-Design-Nose-Pin-1-scaled.jpg', description: 'Classic & diamond nose pins', count: 74 },
-  { id: 'bridal', label: 'Bridal', emoji: '👰', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTlkj32cWHHomMJD-NpuCgyps5ux_WwXijyneI7UiAXi6beNUV_BG7Hg&s=10', count: 168 },
-  { id: 'diamond', label: 'Diamond', emoji: '💖', image: 'https://cdn.orra.co.in/media/catalog/product/cache/10238651d5f95594b9023f998383bb67/o/s/osn21062_ose21062.jpg', count: 234 },
+  { id: 'bridal', label: 'Bridal', emoji: '👰', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTlkj32cWHHomMJD-NpuCgyps5ux_WwXijyneI7UiAXi6beNUV_BG7Hg&s=10', description: 'Exquisite bridal collections', count: 168 },
+  { id: 'diamond', label: 'Diamond', emoji: '💖', image: 'https://cdn.orra.co.in/media/catalog/product/cache/10238651d5f95594b9023f998383bb67/o/s/osn21062_ose21062.jpg', description: 'Sparkling diamond jewellery', count: 234 },
   { id: 'platinum', label: 'Platinum', emoji: '⚜️', image: 'https://images.meesho.com/images/products/454524369/1dmnu_512.webp?width=512', description: 'Timeless platinum jewellery', count: 45 },
 ];
 
 export const COLLECTIONS = [
   { id: 'bridal', label: 'Wedding Collection', image: 'https://choodabazar.com/wp-content/uploads/2023/02/WhatsApp-Image-2023-02-02-at-15.15.541.jpeg', description: 'Opulent bridal sets for your most precious day' },
-  { id: 'temple', label: 'Temple Jewellery', image: 'https://yellowchimes.com/cdn/shop/files/71hX3sfoxKL.jpg?v=1742986292', description: 'Sacred designs inspired by ancient temple art' },
+  { id: 'temple', label: 'Temple Collections', image: 'https://yellowchimes.com/cdn/shop/files/71hX3sfoxKL.jpg?v=1742986292', description: 'Sacred designs inspired by ancient temple art' },
   { id: 'antique', label: 'Antique Collection', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThKEpv1Ra9pXqlGnM40YZIfpubv8nFBNPGys62OCVuibTyQwmB3SfcC1n_&s=10', description: 'Heritage designs with timeless appeal' },
   { id: 'daily', label: 'Daily Wear', image: 'https://d25g9z9s77rn4i.cloudfront.net/uploads/product/1514/1781529020_98c8fa7e4573ba02ae4f.webp', description: 'Elegant designs for every day elegance' },
   { id: 'office', label: 'Office Wear', image: 'https://rukminim2.flixcart.com/image/480/580/xif0q/shopsy-necklace-chain/c/h/3/1-n-45-chain-kisnaba-fashion-original-imagrzrd92gnynku.jpeg?q=90', description: 'Subtle luxury for the modern professional' },
   { id: 'kids', label: 'Kids Collection', image: 'https://tinyfacets.in/cdn/shop/files/TFER46-3.webp?v=1775823357&width=3840', description: 'Delicate and safe designs for little ones' },
-  { id: 'diamond', label: 'Diamond Jewellery', image: 'https://i.pinimg.com/564x/14/b0/1f/14b01f22b8e37b4ac4481def661e9f28.jpg', description: 'Certified diamonds in stunning settings' },
-  { id: 'mens', label: "Men's Jewellery", image: 'https://minebella.com/cdn/shop/files/1MBR01-B.jpg?crop=center&height=2048&v=1704262676&width=2048', description: 'Bold and sophisticated jewellery for men' },
+  { id: 'diamond', label: 'Diamond Collections', image: 'https://i.pinimg.com/564x/14/b0/1f/14b01f22b8e37b4ac4481def661e9f28.jpg', description: 'Certified diamonds in stunning settings' },
+  { id: 'mens', label: "Men's Collections", image: 'https://minebella.com/cdn/shop/files/1MBR01-B.jpg?crop=center&height=2048&v=1704262676&width=2048', description: 'Bold and sophisticated jewellery for men' },
+  // { id: 'featured', label: 'Featured Collection', image: '/87.png', description: 'Our most exclusive, premium, and handpicked signature designs' },
 ];

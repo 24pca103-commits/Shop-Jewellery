@@ -64,7 +64,7 @@ export default function Checkout() {
                 <div className="form-section">
                   <h2>Payment Method</h2>
                   <div className="payment-options">
-                    {['Credit / Debit Card', 'UPI / QR', 'Net Banking', 'EMI Options'].map((opt, i) => (
+                    {['Credit / Debit Card', 'UPI / QR', 'Net Banking'].map((opt, i) => (
                       <label key={opt} className="payment-option">
                         <input type="radio" name="payment" defaultChecked={i===0} />
                         <span>{opt}</span>

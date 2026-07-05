@@ -5,10 +5,11 @@ import logoImg from '../assets/image.png';
 
 const footerLinks = {
   'Shop': [
-    { label: 'Gold Jewellery', href: '/catalog/gold' },
-    { label: 'Diamond Jewellery', href: '/catalog/diamond' },
+    { label: 'Gold Collections', href: '/catalog/gold' },
+    { label: 'Diamond Collections', href: '/catalog/diamond' },
     { label: 'Bridal Collection', href: '/catalog/bridal' },
-    { label: 'Silver Jewellery', href: '/catalog/silver' },
+    { label: 'Featured Collection', href: '/catalog/featured' },
+    { label: 'Silver Collections', href: '/catalog/silver' },
     { label: 'Platinum', href: '/catalog/platinum' },
     { label: 'Coins & Bars', href: '/catalog/coins' },
   ],
@@ -21,7 +22,7 @@ const footerLinks = {
     { label: 'FAQ', href: '/faq' },
   ],
   'Company': [
-    { label: 'About Thodoo Jewellery', href: '/about' },
+    { label: 'About Thodoo Collections', href: '/about' },
     { label: 'Careers', href: '/careers' },
     { label: 'Blog', href: '/blog' },
     { label: 'Gold Saving Scheme', href: '/gold-scheme' },
@@ -60,11 +61,9 @@ export default function Footer() {
         <div className="container">
           <div className="footer-grid">
             <div className="footer-brand">
-              <div className="footer-logo" style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
-                <img src="/logo.png" alt="logo" style={{ height: '60px', objectFit: 'contain', flexShrink: 0 }} />
-                <div style={{ height: '24px', width: '1px', background: 'rgba(255, 215, 0, 0.3)' }}></div>
-                <span style={{ fontFamily: 'var(--font-serif)', fontSize: '0.8rem', fontWeight: '800', color: '#FFE566', letterSpacing: '0.3em', textTransform: 'uppercase', textShadow: '0 1px 2px rgba(0,0,0,0.2)' }}>Jewellery</span>
-              </div>
+              <Link to="/" className="footer-logo" style={{ textDecoration: 'none' }}>
+                <img src="/logo-transparent.png" alt="Thodoo" className="footer-logo-img" />
+              </Link>
               <p className="footer-about">
                 India's most trusted premium jewellery brand, crafting exquisite gold, diamond,
                 and bridal jewellery since 1975. Over 5 lakh happy customers across India.
@@ -134,7 +133,9 @@ export default function Footer() {
       <div className="footer-bottom">
         <div className="container">
           <div className="footer-bottom-inner">
-            <p>© 2026 Thodoo Jewellery. All rights reserved.</p>
+            <div className="footer-copyright">
+              <p>© 2026 Thodoo Collections. All rights reserved.</p>
+            </div>
             <div className="footer-bottom-links">
               <Link to="/privacy" className="footer-bottom-link">Privacy Policy</Link>
               <Link to="/terms" className="footer-bottom-link">Terms of Service</Link>

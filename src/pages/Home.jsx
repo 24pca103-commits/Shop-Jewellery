@@ -81,7 +81,7 @@ export default function Home() {
           </div>
           <div className="showcase-cta">
             <Link to="/catalog" className="btn btn-gold btn-lg">
-              View All Jewellery <ArrowRight size={16} />
+              View All Collections <ArrowRight size={16} />
             </Link>
           </div>
         </div>

@@ -7,6 +7,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import CartDrawer from './components/CartDrawer';
 import ToastContainer from './components/Toast';
+import ScrollToTop from './components/ScrollToTop';
 
 import Home from './pages/Home';
 import Catalog from './pages/Catalog';
@@ -23,6 +24,7 @@ function App() {
       <CartProvider>
         <WishlistProvider>
           <Router>
+            <ScrollToTop />
             <Navbar />
             <CartDrawer />
             <ToastContainer />
