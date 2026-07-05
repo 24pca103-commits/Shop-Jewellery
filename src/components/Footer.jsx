@@ -21,7 +21,7 @@ const footerLinks = {
     { label: 'FAQ', href: '/faq' },
   ],
   'Company': [
-    { label: 'About Kriyaalaya Jewellery', href: '/about' },
+    { label: 'About Thodoo Jewellery', href: '/about' },
     { label: 'Careers', href: '/careers' },
     { label: 'Blog', href: '/blog' },
     { label: 'Gold Saving Scheme', href: '/gold-scheme' },
@@ -60,28 +60,28 @@ export default function Footer() {
         <div className="container">
           <div className="footer-grid">
             <div className="footer-brand">
-              <div className="footer-logo" style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' }}>
-                <img src="/logo.png" alt="logo" style={{ height: '58px', objectFit: 'contain', flexShrink: 0 }} />
-                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
-                  <span style={{ fontFamily: 'var(--font-serif)', fontSize: '1.35rem', fontWeight: '700', color: '#FFD700', letterSpacing: '0.08em', textTransform: 'uppercase', lineHeight: '1.1' }}>Kriyaalaya</span>
-                  <span style={{ fontFamily: 'var(--font-serif)', fontSize: '0.6rem', fontWeight: '500', color: '#FFE566', letterSpacing: '0.28em', textTransform: 'uppercase' }}>Jewellery</span>
+              <div className="footer-logo" style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '4px', marginBottom: '16px' }}>
+                <img src="/logo.png" alt="logo" style={{ height: '70px', objectFit: 'contain', flexShrink: 0 }} />
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', lineHeight: '1' }}>
+                  <span style={{ fontFamily: 'var(--font-serif)', fontSize: '1.4rem', fontWeight: '900', color: '#FFD700', letterSpacing: '0.15em', textTransform: 'uppercase', textShadow: '0 1px 2px rgba(0,0,0,0.2)' }}>Thodoo</span>
+                  <span style={{ fontFamily: 'var(--font-serif)', fontSize: '0.65rem', fontWeight: '800', color: '#FFE566', letterSpacing: '0.3em', textTransform: 'uppercase', marginTop: '2px', textShadow: '0 1px 2px rgba(0,0,0,0.2)' }}>Jewellery</span>
                 </div>
               </div>
               <p className="footer-about">
-                India's most trusted premium jewellery brand, crafting exquisite gold, diamond, 
+                India's most trusted premium jewellery brand, crafting exquisite gold, diamond,
                 and bridal jewellery since 1975. Over 5 lakh happy customers across India.
               </p>
               <div className="footer-contact-items">
-                <a href="tel:1800-102-9898" className="footer-contact-item">
-                  <Phone size={14} /> 1800-102-9898
+                <a href="tel:+919876543210" className="footer-contact-item">
+                  <Phone size={14} /> +91 98765 43210
                 </a>
-                <a href="mailto:care@kriyaalayajewellery.com" className="footer-contact-item">
-                  <Mail size={14} /> care@kriyaalayajewellery.com
+                <a href="mailto:support@thodoo.com" className="footer-contact-item">
+                  <Mail size={14} /> support@thodoo.com
                 </a>
-                <span className="footer-contact-item" style={{alignItems: 'flex-start'}}>
-                  <MapPin size={14} style={{marginTop: '4px', flexShrink: 0}} />
-                  <span style={{lineHeight: 1.4}}>
-                    No.5, Jaya Complex, Thadagam Main Rd, PMR Nagar,<br/>TVS Nagar, Coimbatore, Tamil Nadu 641025
+                <span className="footer-contact-item" style={{ alignItems: 'flex-start' }}>
+                  <MapPin size={14} style={{ marginTop: '4px', flexShrink: 0 }} />
+                  <span style={{ lineHeight: 1.4 }}>
+                    102, Gold Palace Boulevard, Sector 4,<br />HSR Layout, Bengaluru, Karnataka 560102
                   </span>
                 </span>
               </div>
@@ -136,7 +136,7 @@ export default function Footer() {
       <div className="footer-bottom">
         <div className="container">
           <div className="footer-bottom-inner">
-            <p>© 2026 Kriyaalaya Jewellery. All rights reserved.</p>
+            <p>© 2026 Thodoo Jewellery. All rights reserved.</p>
             <div className="footer-bottom-links">
               <Link to="/privacy" className="footer-bottom-link">Privacy Policy</Link>
               <Link to="/terms" className="footer-bottom-link">Terms of Service</Link>

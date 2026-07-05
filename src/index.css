@@ -23,8 +23,8 @@
   --error: #E57373;
 
   /* Typography */
-  --font-serif: 'Playfair Display', 'Georgia', serif;
-  --font-serif-alt: 'Cormorant Garamond', 'Georgia', serif;
+  --font-serif: 'Inter', system-ui, sans-serif;
+  --font-serif-alt: 'Inter', system-ui, sans-serif;
   --font-body: 'Inter', system-ui, sans-serif;
 
   /* Spacing */

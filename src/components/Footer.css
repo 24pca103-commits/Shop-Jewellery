@@ -1,4 +1,4 @@
-.footer { background: rgba(75, 50, 8, 0.98); color: rgba(255,255,255,0.85); }
+.footer { background: rgb(46, 30, 1); color: rgba(255,255,255,0.85); }
 
 /* Trust Bar */
 .footer-trust {
@@ -21,7 +21,7 @@
 .trust-desc { font-size: 0.68rem; color: rgba(255,255,255,0.65); margin-top: 2px; }
 
 /* Main Footer */
-.footer-main { padding: var(--space-3xl) 0 var(--space-2xl); }
+.footer-main { padding: 32px 0 var(--space-2xl); }
 .footer-grid {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1fr 1.5fr;
@@ -34,6 +34,12 @@
   align-items: center;
   gap: 10px;
   margin-bottom: var(--space-md);
+}
+
+.footer-logo img {
+  filter: brightness(0) saturate(100%) invert(72%) sepia(90%) saturate(650%) hue-rotate(355deg) brightness(105%) contrast(105%);
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
 }
 .footer-brand-name {
   display: block;

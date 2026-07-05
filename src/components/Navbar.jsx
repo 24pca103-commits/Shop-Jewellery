@@ -55,10 +55,10 @@ export default function Navbar() {
         <div className="navbar-topbar-inner">
           <div className="flex items-center gap-md">
             <Phone size={12} />
-            <span>1800-102-9898</span>
+            <span>+91 98765 43210</span>
             <span className="topbar-sep">|</span>
             <MapPin size={12} />
-            <span className="topbar-link" style={{ cursor: 'default' }}>Coimbatore, TN</span>
+            <span className="topbar-link" style={{ cursor: 'default' }}>Bengaluru, KA</span>
           </div>
           <div className="gold-ticker">
             <span className="ticker-label">Live Gold Rate:</span>
@@ -79,11 +79,11 @@ export default function Navbar() {
       {/* Main Nav */}
       <nav className={`navbar ${scrolled ? 'navbar-scrolled' : ''}`}>
         <div className="navbar-inner">
-          <Link to="/" className="navbar-logo" style={{ padding: '4px 0', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px' }}>
-            <img src="/logo.png" alt="logo" style={{ height: '58px', objectFit: 'contain', flexShrink: 0 }} />
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
-              <span style={{ fontFamily: 'var(--font-serif)', fontSize: '1.35rem', fontWeight: '700', color: '#FFD700', letterSpacing: '0.08em', textTransform: 'uppercase', lineHeight: '1.1' }}>Kriyaalaya</span>
-              <span style={{ fontFamily: 'var(--font-serif)', fontSize: '0.6rem', fontWeight: '500', color: '#FFE566', letterSpacing: '0.28em', textTransform: 'uppercase' }}>Jewellery</span>
+          <Link to="/" className="navbar-logo" style={{ padding: '2px 0', textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
+            <img src="/logo.png" alt="Thodoo" style={{ height: '54px', objectFit: 'contain', flexShrink: 0 }} />
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', lineHeight: '1' }}>
+              <span style={{ fontFamily: 'var(--font-serif)', fontSize: '1.4rem', fontWeight: '900', color: '#FFD700', letterSpacing: '0.15em', textTransform: 'uppercase', textShadow: '0 1px 2px rgba(0,0,0,0.2)' }}>Thodoo</span>
+              <span style={{ fontFamily: 'var(--font-serif)', fontSize: '0.65rem', fontWeight: '800', color: '#FFE566', letterSpacing: '0.3em', textTransform: 'uppercase', marginTop: '2px', textShadow: '0 1px 2px rgba(0,0,0,0.2)' }}>Jewellery</span>
             </div>
           </Link>
 
@@ -99,7 +99,7 @@ export default function Navbar() {
                     <div className="megamenu-grid">
                       {CATEGORIES.slice(0, 12).map(cat => (
                         <Link key={cat.id} to={`/catalog/${cat.id}`} className="megamenu-item" onClick={() => setActiveDropdown(null)}>
-                          <span className="megamenu-emoji">{cat.emoji}</span>
+                          <img src={cat.image} alt={cat.label} className="megamenu-img" />
                           <span>{cat.label}</span>
                         </Link>
                       ))}
@@ -184,8 +184,9 @@ export default function Navbar() {
           <div className="mobile-divider" />
           <div className="mobile-categories">
             {CATEGORIES.slice(0, 8).map(cat => (
-              <Link key={cat.id} to={`/catalog/${cat.id}`} className="mobile-cat-link" onClick={() => setMobileOpen(false)}>
-                <span>{cat.emoji}</span> {cat.label}
+              <Link key={cat.id} to={`/catalog/${cat.id}`} className="mobile-cat-link" style={{ display: 'flex', alignItems: 'center', gap: '8px' }} onClick={() => setMobileOpen(false)}>
+                <img src={cat.image} alt={cat.label} style={{ width: '22px', height: '22px', borderRadius: '50%', objectFit: 'cover' }} />
+                <span>{cat.label}</span>
               </Link>
             ))}
           </div>

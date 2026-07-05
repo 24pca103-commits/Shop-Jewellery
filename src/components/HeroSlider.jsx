@@ -11,7 +11,7 @@ const SLIDES = [
     subtitle: 'Exquisite gold, diamond & bridal jewellery crafted for India\'s most precious moments.',
     cta1: { label: 'Shop Bridal', href: '/catalog/bridal' },
     cta2: { label: 'Explore Diamonds', href: '/catalog/diamond' },
-    bg: 'https://t4.ftcdn.net/jpg/01/42/93/37/360_F_142933739_Q6zg4Fm2wm8ykeLTM3QEaL3UVgreTAvk.jpg',
+    bg: 'https://static.vecteezy.com/system/resources/thumbnails/066/557/918/small/elegant-gold-jewelry-collection-displayed-on-a-marble-surface-with-soft-fabric-and-floral-accents-photo.jpg',
     accent: '#8B5A2B',
     align: 'left',
   },

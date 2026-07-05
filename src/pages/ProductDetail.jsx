@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ShoppingBag, Heart, Share2, Star, Shield, Award, PlayCircle, Maximize2, Zap, RotateCcw } from 'lucide-react';
 import { useCart } from '../context/CartContext';
@@ -21,6 +21,19 @@ export default function ProductDetail() {
 
   const wished = isWishlisted(product.id);
   const images = product.images || [product.image];
+
+  const [zoomPos, setZoomPos] = useState({ x: 50, y: 50, show: false });
+
+  const handleMouseMove = (e) => {
+    const { left, top, width, height } = e.currentTarget.getBoundingClientRect();
+    const x = ((e.clientX - left) / width) * 100;
+    const y = ((e.clientY - top) / height) * 100;
+    setZoomPos({ x, y, show: true });
+  };
+
+  const handleMouseLeave = () => {
+    setZoomPos({ x: 50, y: 50, show: false });
+  };
 
   const handleCart = () => {
     addToCart(product);
@@ -45,28 +58,35 @@ export default function ProductDetail() {
         <div className="product-detail-grid">
           {/* Gallery */}
           <div className="product-gallery">
-            <div className="gallery-main">
+            <div className="gallery-main"
+              onMouseMove={handleMouseMove}
+              onMouseLeave={handleMouseLeave}
+              style={{ cursor: 'zoom-in', overflow: 'hidden' }}
+            >
               {activeImg === 'video' && product.video ? (
                 <video src={product.video} controls autoPlay loop className="gallery-main-img" style={{ backgroundColor: '#000' }} />
               ) : (
-                <img src={images[activeImg]} alt={product.name} className="gallery-main-img" />
+                <img 
+                  src={images[activeImg]} 
+                  alt={product.name} 
+                  className="gallery-main-img" 
+                  style={{ 
+                    transform: zoomPos.show ? 'scale(2.5)' : 'scale(1)',
+                    transformOrigin: `${zoomPos.x}% ${zoomPos.y}%`,
+                    transition: zoomPos.show ? 'none' : 'transform 0.3s ease, transform-origin 0.3s ease'
+                  }} 
+                />
               )}
-              <button className="gallery-action-btn view-360-btn" title="360 View">
-                <RotateCcw size={16} /> 360° View
-              </button>
-              <button className="gallery-action-btn view-zoom-btn" title="Zoom">
-                <Maximize2 size={16} />
-              </button>
             </div>
             {(images.length > 1 || product.video) && (
               <div className="gallery-thumbs">
                 {images.map((img, i) => (
-                  <button key={i} className={`gallery-thumb ${i === activeImg ? 'active' : ''}`} onClick={() => setActiveImg(i)}>
+                  <button key={i} className={`gallery-thumb ${i === activeImg ? 'active' : ''}`} onClick={() => { setActiveImg(i); }}>
                     <img src={img} alt={`Thumb ${i+1}`} />
                   </button>
                 ))}
                 {product.video && (
-                  <button className={`gallery-thumb video-thumb ${activeImg === 'video' ? 'active' : ''}`} onClick={() => setActiveImg('video')}>
+                  <button className={`gallery-thumb video-thumb ${activeImg === 'video' ? 'active' : ''}`} onClick={() => { setActiveImg('video'); }}>
                     <PlayCircle size={24} />
                     <span>Video</span>
                   </button>
