@@ -43,7 +43,15 @@ export default function Catalog() {
 
   const products = useMemo(() => {
     let p = [...PRODUCTS];
-    if (category) p = p.filter(x => x.category === category || x.collection === category || x.metal === category);
+    if (category) {
+      const lowerCat = category.toLowerCase();
+      p = p.filter(x => 
+        (x.category && x.category.toLowerCase() === lowerCat) || 
+        (x.collection && x.collection.toLowerCase() === lowerCat) || 
+        (x.metal && x.metal.toLowerCase() === lowerCat) ||
+        (x.stone && x.stone.toLowerCase() === lowerCat)
+      );
+    }
     if (searchQ) p = p.filter(x => x.name.toLowerCase().includes(searchQ.toLowerCase()) || x.category.includes(searchQ.toLowerCase()));
     if (filters.metals.length) p = p.filter(x => filters.metals.includes(x.metal));
     if (filters.occasions.length) p = p.filter(x => filters.occasions.includes(x.occasion));
