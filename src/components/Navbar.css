@@ -310,7 +310,7 @@
   width: 40px;
   height: 40px;
   border-radius: var(--radius-sm);
-  color: var(--charcoal);
+  color: rgba(255, 255, 255, 0.9);
   background: transparent;
   border: none;
   cursor: pointer;
@@ -568,6 +568,11 @@
   .logo-brand {
     font-size: 1.15rem;
   }
+
+  .navbar-logo-img {
+    height: 120px;
+    left: -70px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -595,6 +600,15 @@
 
   .logo-sub {
     display: none;
+  }
+
+  .navbar-logo {
+    width: 110px;
+  }
+
+  .navbar-logo-img {
+    height: 100px;
+    left: -30px;
   }
 }
 

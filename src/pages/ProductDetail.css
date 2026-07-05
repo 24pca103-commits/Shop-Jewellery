@@ -1,5 +1,5 @@
 .product-detail-page {
-  padding-bottom: var(--space-3xl);
+  padding-bottom: var(--space-lg);
 }
 
 .product-breadcrumb {
@@ -90,7 +90,7 @@
 .review-row { display: flex; align-items: center; gap: 8px; margin-bottom: var(--space-lg); }
 .rating-text { font-size: 0.85rem; color: var(--charcoal-mid); font-weight: 500; }
 
-.price-block { margin-bottom: var(--space-xl); border-bottom: 1px solid rgba(139, 90, 43,0.15); padding-bottom: var(--space-lg); }
+.price-block { margin-bottom: var(--space-md); border-bottom: 1px solid rgba(139, 90, 43,0.15); padding-bottom: var(--space-md); }
 .price { font-family: var(--font-serif); font-size: 2rem; font-weight: 700; color: var(--charcoal); display: block; margin-bottom: 4px; }
 .tax-info { font-size: 0.8rem; color: var(--charcoal-ghost); }
 
@@ -146,7 +146,6 @@
 @media (max-width: 768px) {
   .product-title { font-size: 1.6rem; }
   .price { font-size: 1.5rem; }
-  .specs-grid { grid-template-columns: 1fr; }
   .action-buttons { flex-wrap: wrap; }
   .secondary-actions { flex-direction: column; }
 }
@@ -160,8 +159,9 @@
 @media (max-width: 480px) {
   .product-title { font-size: 1.35rem; }
   .price { font-size: 1.3rem; }
-  .action-buttons { flex-direction: column; }
-  .action-buttons .btn-lg { width: 100%; flex: unset; min-width: unset; }
+  .action-buttons { flex-direction: row; flex-wrap: nowrap; gap: 8px; }
+  .action-buttons .btn-lg { min-width: unset; flex: unset; }
+  .action-buttons .btn-gold.btn-lg { flex: 1; }
   .emi-banner { flex-direction: column; text-align: center; }
   .product-breadcrumb { font-size: 0.72rem; gap: 5px; }
 }

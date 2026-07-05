@@ -53,6 +53,15 @@ export default function ProductDetail() {
     setZoomPos({ x, y, show: true });
   };
 
+  const handleTouchMove = (e) => {
+    const touch = e.touches[0];
+    if (!touch) return;
+    const { left, top, width, height } = e.currentTarget.getBoundingClientRect();
+    const x = ((touch.clientX - left) / width) * 100;
+    const y = ((touch.clientY - top) / height) * 100;
+    setZoomPos({ x, y, show: true });
+  };
+
   const handleMouseLeave = () => {
     setZoomPos({ x: 50, y: 50, show: false });
   };
@@ -83,7 +92,10 @@ export default function ProductDetail() {
             <div className="gallery-main"
               onMouseMove={handleMouseMove}
               onMouseLeave={handleMouseLeave}
-              style={{ cursor: 'zoom-in', overflow: 'hidden' }}
+              onTouchMove={handleTouchMove}
+              onTouchStart={handleTouchMove}
+              onTouchEnd={handleMouseLeave}
+              style={{ cursor: 'zoom-in', overflow: 'hidden', touchAction: 'none' }}
             >
               {activeImg === 'video' && product.video ? (
                 <video src={product.video} controls autoPlay loop className="gallery-main-img" style={{ backgroundColor: '#000' }} />
