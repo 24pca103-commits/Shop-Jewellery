@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Search, Heart, ShoppingBag, User, MapPin, Phone, X, Menu, TrendingUp, TrendingDown } from 'lucide-react';
+import { Search, Heart, ShoppingBag, User, MapPin, Phone, X, Menu, TrendingUp, TrendingDown, Home, Gem, Sparkles, Crown, LayoutGrid, PiggyBank } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import { useWishlist } from '../context/WishlistContext';
 import { useApp } from '../context/AppContext';
@@ -40,12 +40,12 @@ export default function Navbar() {
   };
 
   const navLinks = [
-    { label: 'Home', href: '/', dropdown: null },
-    { label: 'Gold', href: '/catalog/gold', dropdown: null },
-    { label: 'Diamond', href: '/catalog/diamond', dropdown: null },
-    { label: 'Bridal', href: '/catalog/bridal', dropdown: null },
-    { label: 'Collections', href: '/catalog', hasDropdown: true },
-    { label: 'Gold Scheme', href: '/gold-scheme', dropdown: null },
+    { label: 'Home', href: '/', dropdown: null, icon: <Home size={18} /> },
+    { label: 'Gold', href: '/catalog/gold', dropdown: null, icon: <Gem size={18} /> },
+    { label: 'Diamond', href: '/catalog/diamond', dropdown: null, icon: <Sparkles size={18} /> },
+    { label: 'Bridal', href: '/catalog/bridal', dropdown: null, icon: <Crown size={18} /> },
+    { label: 'Collections', href: '/catalog', hasDropdown: true, icon: <LayoutGrid size={18} /> },
+    { label: 'Gold Scheme', href: '/gold-scheme', dropdown: null, icon: <PiggyBank size={18} /> },
   ];
 
   return (
@@ -189,6 +189,7 @@ export default function Navbar() {
         <div className="mobile-menu-inner">
           {navLinks.map(link => (
             <Link key={link.label} to={link.href} className="mobile-nav-link" onClick={() => setMobileOpen(false)}>
+              <span className="mobile-nav-icon">{link.icon}</span>
               {link.label}
             </Link>
           ))}

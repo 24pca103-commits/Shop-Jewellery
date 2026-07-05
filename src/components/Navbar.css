@@ -103,7 +103,7 @@
   max-width: 1380px;
   margin: 0 auto;
   padding: 0 var(--space-xl);
-  height: 85px;
+  height: 96px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -119,9 +119,9 @@
 }
 
 .navbar-logo-img {
-  height: 72px;
+  height: 95px;
   width: auto;
-  max-width: 180px;
+  max-width: 220px;
   object-fit: contain;
   display: block;
   transition: height var(--transition-base);
@@ -129,19 +129,19 @@
 
 @media (max-width: 1024px) {
   .navbar-logo-img {
-    height: 60px;
+    height: 78px;
   }
 }
 
 @media (max-width: 768px) {
   .navbar-logo-img {
-    height: 54px;
+    height: 68px;
   }
 }
 
 @media (max-width: 480px) {
   .navbar-logo-img {
-    height: 48px;
+    height: 60px;
   }
 }
 
@@ -493,18 +493,40 @@
 }
 
 .mobile-nav-link {
-  display: block;
-  padding: 12px var(--space-md);
-  font-size: 1rem;
-  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px var(--space-md);
+  font-size: 1.05rem;
+  font-weight: 600;
   color: var(--charcoal);
   border-radius: var(--radius-sm);
   transition: var(--transition-fast);
+  border-left: 3px solid transparent;
 }
 
 .mobile-nav-link:hover {
   background: var(--gold-muted);
-  color: var(--gold);
+  color: var(--gold-dark);
+  border-left-color: var(--gold);
+}
+
+.mobile-nav-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  background: rgba(139, 90, 43, 0.08);
+  border-radius: var(--radius-sm);
+  color: var(--gold-dark);
+  flex-shrink: 0;
+  transition: var(--transition-fast);
+}
+
+.mobile-nav-link:hover .mobile-nav-icon {
+  background: var(--gold);
+  color: var(--white);
 }
 
 .mobile-divider {
@@ -562,7 +584,7 @@
   .navbar-inner {
     padding: 0 var(--space-md);
     gap: var(--space-md);
-    height: 68px;
+    height: 78px;
   }
 
   .navbar-topbar {
@@ -574,14 +596,14 @@
   }
 
   .navbar-logo img {
-    height: 54px;
+    height: 68px;
   }
 }
 
 @media (max-width: 480px) {
   .navbar-inner {
     padding: 0 var(--space-sm);
-    height: 60px;
+    height: 68px;
   }
 
   .gold-ticker {
@@ -606,7 +628,7 @@
   }
 
   .navbar-logo img {
-    height: 48px;
+    height: 60px;
   }
 }
 

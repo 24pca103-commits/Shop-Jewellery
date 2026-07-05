@@ -60,9 +60,9 @@
 
 .footer-logo img,
 .footer-logo-img {
-  height: 70px;
+  height: 90px;
   width: auto;
-  max-width: 200px;
+  max-width: 220px;
   object-fit: contain;
   display: block;
   transition: height var(--transition-base);
@@ -72,14 +72,14 @@
 @media (max-width: 768px) {
   .footer-logo img,
   .footer-logo-img {
-    height: 58px;
+    height: 75px;
   }
 }
 
 @media (max-width: 480px) {
   .footer-logo img,
   .footer-logo-img {
-    height: 50px;
+    height: 65px;
   }
 }
 
