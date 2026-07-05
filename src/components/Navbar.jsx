@@ -93,7 +93,18 @@ export default function Navbar() {
               <div key={link.label} className="nav-item"
                 onMouseEnter={() => link.hasDropdown && setActiveDropdown(link.label)}
                 onMouseLeave={() => setActiveDropdown(null)}>
-                <Link to={link.href} className="nav-link">{link.label}</Link>
+                <Link 
+                  to={link.href} 
+                  className="nav-link"
+                  onClick={(e) => {
+                    if (link.hasDropdown) {
+                      e.preventDefault();
+                      setActiveDropdown(activeDropdown === link.label ? null : link.label);
+                    }
+                  }}
+                >
+                  {link.label}
+                </Link>
                 {link.hasDropdown && activeDropdown === link.label && (
                   <div className="nav-megamenu">
                     <div className="megamenu-grid">
