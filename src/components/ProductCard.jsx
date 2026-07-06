@@ -6,7 +6,7 @@ import { useWishlist } from '../context/WishlistContext';
 import { useApp } from '../context/AppContext';
 import './ProductCard.css';
 
-export default function ProductCard({ product, onQuickView }) {
+export default function ProductCard({ product, onQuickView, fromCategory }) {
   const [imgLoaded, setImgLoaded] = useState(false);
   const { addToCart } = useCart();
   const { toggleWishlist, isWishlisted } = useWishlist();
@@ -34,7 +34,7 @@ export default function ProductCard({ product, onQuickView }) {
   };
 
   return (
-    <Link to={`/product/${product.id}`} className="product-card">
+    <Link to={`/product/${product.id}`} state={{ fromCategory }} className="product-card">
       {/* Image */}
       <div className="product-image-wrap">
         {!imgLoaded && <div className="skeleton product-img-skeleton" />}

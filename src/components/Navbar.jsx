@@ -53,22 +53,39 @@ export default function Navbar() {
       {/* Top Bar */}
       <div className="navbar-topbar">
         <div className="navbar-topbar-inner">
-          <div className="flex items-center gap-md">
+          <div className="topbar-phone" style={{ display: 'flex', alignItems: 'center', gap: '8px', flexShrink: 0 }}>
             <Phone size={12} />
             <span>+91 93854 11051</span>
           </div>
-          <div className="gold-ticker">
-            <span className="ticker-label">Live Gold Rate:</span>
-            {Object.entries(GOLD_RATE).filter(([k]) => ['24K', '22K', '18K'].includes(k)).map(([k, v]) => (
-              <span key={k} className="ticker-item">
-                <span className="ticker-purity">{k}</span>
-                <span className="ticker-price">₹{v.toLocaleString()}/g</span>
-              </span>
-            ))}
-            <span className={`ticker-change ${GOLD_RATE.trend === 'up' ? 'up' : 'down'}`}>
-              {GOLD_RATE.trend === 'up' ? <TrendingUp size={11} /> : <TrendingDown size={11} />}
-              {GOLD_RATE.change}
-            </span>
+          <div className="gold-ticker-wrapper">
+            <div className="gold-ticker-marquee">
+              <div className="gold-ticker-content">
+                <span className="ticker-label">Live Gold Rate:</span>
+                {Object.entries(GOLD_RATE).filter(([k]) => ['24K', '22K', '18K'].includes(k)).map(([k, v]) => (
+                  <span key={k} className="ticker-item">
+                    <span className="ticker-purity">{k}</span>
+                    <span className="ticker-price">₹{v.toLocaleString()}/g</span>
+                  </span>
+                ))}
+                <span className={`ticker-change ${GOLD_RATE.trend === 'up' ? 'up' : 'down'}`}>
+                  {GOLD_RATE.trend === 'up' ? <TrendingUp size={11} /> : <TrendingDown size={11} />}
+                  {GOLD_RATE.change}
+                </span>
+              </div>
+              <div className="gold-ticker-content" aria-hidden="true">
+                <span className="ticker-label">Live Gold Rate:</span>
+                {Object.entries(GOLD_RATE).filter(([k]) => ['24K', '22K', '18K'].includes(k)).map(([k, v]) => (
+                  <span key={k} className="ticker-item">
+                    <span className="ticker-purity">{k}</span>
+                    <span className="ticker-price">₹{v.toLocaleString()}/g</span>
+                  </span>
+                ))}
+                <span className={`ticker-change ${GOLD_RATE.trend === 'up' ? 'up' : 'down'}`}>
+                  {GOLD_RATE.trend === 'up' ? <TrendingUp size={11} /> : <TrendingDown size={11} />}
+                  {GOLD_RATE.change}
+                </span>
+              </div>
+            </div>
           </div>
         </div>
       </div>

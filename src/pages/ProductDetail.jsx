@@ -1,5 +1,5 @@
 import { useState, useRef } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useLocation } from 'react-router-dom';
 import { ShoppingBag, Heart, Share2, Star, Shield, Award, PlayCircle, Maximize2, Zap, RotateCcw } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import { useWishlist } from '../context/WishlistContext';
@@ -11,10 +11,44 @@ import './ProductDetail.css';
 export default function ProductDetail() {
   const { id } = useParams();
   const product = PRODUCTS.find(p => p.id === parseInt(id));
-  const collectionData = product ? COLLECTIONS.find(c => c.id === product.collection) : null;
-  const categoryData = product ? CATEGORIES.find(c => c.id === product.category) : null;
-  const breadcrumbPath = collectionData ? `/catalog/${product.collection}` : `/catalog/${product.category}`;
-  const breadcrumbLabel = collectionData ? collectionData.label : (categoryData ? categoryData.label : product.category);
+  const location = useLocation();
+  const fromCategory = location.state?.fromCategory;
+
+  let activeCollection = null;
+  let activeCategory = null;
+
+  if (fromCategory) {
+    const lowerFrom = fromCategory.toLowerCase();
+    if (lowerFrom === 'featured') {
+      activeCollection = { id: 'featured', label: 'Featured Collection' };
+    } else {
+      activeCollection = COLLECTIONS.find(c => c.id === lowerFrom);
+      activeCategory = CATEGORIES.find(c => c.id === lowerFrom);
+    }
+  }
+
+  // Fallback if not traversed via location state
+  if (!activeCollection && !activeCategory && product) {
+    if (product.collection) {
+      const lowerCol = product.collection.toLowerCase();
+      if (lowerCol === 'featured') {
+        activeCollection = { id: 'featured', label: 'Featured Collection' };
+      } else {
+        activeCollection = COLLECTIONS.find(c => c.id === lowerCol);
+      }
+    }
+    if (!activeCollection && product.category) {
+      activeCategory = CATEGORIES.find(c => c.id === product.category.toLowerCase());
+    }
+  }
+
+  const breadcrumbPath = activeCollection 
+    ? `/catalog/${activeCollection.id}` 
+    : (activeCategory ? `/catalog/${activeCategory.id}` : `/catalog`);
+    
+  const breadcrumbLabel = activeCollection 
+    ? activeCollection.label 
+    : (activeCategory ? activeCategory.label : (product ? product.category : ''));
 
   const [activeImg, setActiveImg] = useState(0);
   const { addToCart } = useCart();

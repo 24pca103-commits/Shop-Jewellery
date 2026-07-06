@@ -204,14 +204,14 @@ export default function Catalog() {
               </div>
             ) : (
               <div className={`catalog-products ${gridView ? 'grid-view' : 'list-view'}`}>
-                {products.map(p => <ProductCard key={p.id} product={p} onQuickView={setQuickView} />)}
+                {products.map(p => <ProductCard key={p.id} product={p} onQuickView={setQuickView} fromCategory={category} />)}
               </div>
             )}
           </div>
         </div>
       </div>
 
-      {quickView && <QuickViewModal product={quickView} onClose={() => setQuickView(null)} />}
+      {quickView && <QuickViewModal product={quickView} onClose={() => setQuickView(null)} fromCategory={category} />}
     </div>
   );
 }

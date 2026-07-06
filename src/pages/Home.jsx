@@ -29,8 +29,26 @@ export default function Home() {
 
       {/* Gold Rate Banner */}
       <div className="gold-rate-banner">
-        <div className="container">
-          <div className="gold-rate-inner">
+        <div className="gold-rate-inner-marquee">
+          <div className="gold-rate-marquee-content">
+            <div className="gold-rate-label">
+              <TrendingUp size={14} />
+              <span>Today's Gold Rate</span>
+            </div>
+            {[['24K', GOLD_RATE['24K']], ['22K', GOLD_RATE['22K']], ['18K', GOLD_RATE['18K']]].map(([k, v]) => (
+              <div key={k} className="gold-rate-item">
+                <span className="gold-rate-purity">{k}</span>
+                <span className="gold-rate-price">₹{v.toLocaleString()}/g</span>
+              </div>
+            ))}
+            <div className={`gold-rate-change ${GOLD_RATE.trend}`}>
+              {GOLD_RATE.change} today
+            </div>
+            <Link to="/gold-scheme" className="gold-rate-cta">
+              Start Gold Scheme <ArrowRight size={13} />
+            </Link>
+          </div>
+          <div className="gold-rate-marquee-content" aria-hidden="true">
             <div className="gold-rate-label">
               <TrendingUp size={14} />
               <span>Today's Gold Rate</span>

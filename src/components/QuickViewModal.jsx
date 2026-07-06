@@ -5,7 +5,7 @@ import { useApp } from '../context/AppContext';
 import { Link } from 'react-router-dom';
 import './QuickViewModal.css';
 
-export default function QuickViewModal({ product, onClose }) {
+export default function QuickViewModal({ product, onClose, fromCategory }) {
   const { addToCart } = useCart();
   const { toggleWishlist, isWishlisted } = useWishlist();
   const { addToast } = useApp();
@@ -86,7 +86,7 @@ export default function QuickViewModal({ product, onClose }) {
             </div>
 
             <div className="quickview-footer">
-              <Link to={`/product/${product.id}`} className="view-full-details">
+              <Link to={`/product/${product.id}`} state={{ fromCategory }} className="view-full-details">
                 View Full Product Details →
               </Link>
             </div>
